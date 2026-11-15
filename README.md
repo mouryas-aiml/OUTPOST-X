@@ -539,7 +539,7 @@ OUTPOST-X was designed, engineered, and verified for the **2026 NASA Space Apps 
 
 | Name | Role | Contact & Professional Profiles |
 |:---:|:---:|:---:|
-| **Mourya S** | **Team Lead & Lead Developer**<br/>*Software Architecture, Deterministic Engine, UI/UX* | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mouryas)<br/>📧 [`mouryas@outlook.in`](mailto:mouryas@outlook.in) |
+| **Mourya S** | **Team Lead & Lead Developer**<br/>*Software Architecture, Deterministic Engine, UI/UX* | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mourya-s)<br/>📧 [`mouryas@outlook.in`](mailto:mouryas@outlook.in) |
 | **Chitra Shree K** | **UI/UX Designer & Aerospace Simulation**<br/>*Design System, Human Factors, Pedagogical Framework* | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chitra-shree-k) |
 | **Monika S** | **Data Architect & Systems Engineering**<br/>*NASA Telemetry Ingestion, ECLSS Mass Balances, QA* | [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/monika-s) |
 
