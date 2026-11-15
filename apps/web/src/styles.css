@@ -3442,6 +3442,23 @@ html.cockpit-active .app {
   overflow: hidden;
 }
 
+/* Cockpit screen overrides for graphical canvases:
+   Fits the NASA 3D orbital view and Dependency Ripple SVG neatly inside cockpit monitor viewports
+   without causing clipped viewports and massive internal scrollbars. */
+.cockpit-screen-content .orbital-iframe-container {
+  height: 190px;
+  min-height: 190px;
+  aspect-ratio: unset;
+}
+
+.cockpit-screen-content .ripple-svg {
+  max-height: 190px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
 /* Same overcrowding problem, specific to FactCardGallery (power-fact-gallery,
    comms-fact-gallery, lifesupport-gallery-*): a horizontally-scrolling photo strip needs real
    width to read as photos at all — inside a cockpit screen it rendered as a sliver of cropped
@@ -4420,3 +4437,366 @@ html.cockpit-active .app {
   transform: scale(1.01);
   transition: all 0.3s ease;
 }
+
+/* ==========================================================================
+   OUTPOST-X Fullscreen Interactive Overlays (Orbital 3D & Dependency Network)
+   Designed for high-impact presentations & video demonstration recording
+   ========================================================================== */
+
+.outpost-panel-head-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.outpost-panel-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.outpost-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(59, 130, 246, 0.2));
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.15);
+}
+
+.outpost-expand-btn:hover {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.35), rgba(59, 130, 246, 0.35));
+  border-color: #38bdf8;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+  transform: translateY(-1px);
+}
+
+.outpost-fullscreen-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(3, 7, 18, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden;
+  animation: outpostFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes outpostFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.outpost-fullscreen-modal {
+  width: 96vw;
+  max-width: 1600px;
+  height: 94vh;
+  background: linear-gradient(180deg, #0b1120 0%, #060a14 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.85), 0 0 50px rgba(6, 182, 212, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.outpost-fullscreen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 14px 20px;
+  background: rgba(13, 21, 39, 0.95);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.outpost-fullscreen-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.outpost-fullscreen-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outpost-fullscreen-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.outpost-fullscreen-subtitle {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin: 2px 0 0 0;
+}
+
+.outpost-fullscreen-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.outpost-fullscreen-close-btn {
+  background: rgba(239, 68, 68, 0.18) !important;
+  border: 1px solid rgba(239, 68, 68, 0.45) !important;
+  color: #fca5a5 !important;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.outpost-fullscreen-close-btn:hover {
+  background: rgba(239, 68, 68, 0.35) !important;
+  border-color: rgba(239, 68, 68, 0.8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.4);
+}
+
+.outpost-fullscreen-content {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  position: relative;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.outpost-fullscreen-iframe-container {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: #000;
+  position: relative;
+}
+
+.outpost-fullscreen-iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.outpost-fullscreen-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 20px;
+  background: rgba(7, 12, 24, 0.9);
+  border-top: 1px solid rgba(56, 189, 248, 0.15);
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.outpost-fullscreen-instructions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Fullscreen Dependency Network Layout */
+.outpost-fullscreen-ripple-body {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.outpost-fullscreen-svg-wrap {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  background: rgba(6, 10, 20, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.outpost-fullscreen-ripple-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.ripple-legend-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 8px;
+}
+
+.legend-chip {
+  font-size: 0.72rem;
+  font-family: var(--font-mono, monospace);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.legend-chip-system { color: #38bdf8; border-color: rgba(56, 189, 248, 0.3); }
+.legend-chip-power { color: #facc15; border-color: rgba(250, 204, 21, 0.3); }
+.legend-chip-domain { color: #34d399; border-color: rgba(52, 211, 153, 0.3); }
+.legend-chip-crew { color: #f472b6; border-color: rgba(244, 114, 182, 0.3); }
+
+/* Node Inspector Drawer in Fullscreen Dependency Web */
+.ripple-inspector-sidebar {
+  width: 340px;
+  flex-shrink: 0;
+  height: 100%;
+  background: rgba(10, 16, 30, 0.95);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 12px;
+  padding: 18px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ripple-inspector-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.ripple-inspector-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.node-kind-badge {
+  font-size: 0.72rem;
+  font-family: var(--font-mono, monospace);
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.ripple-inspector-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.ripple-inspector-section h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin: 0 0 8px 0;
+}
+
+.ripple-connected-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ripple-connected-list li {
+  font-size: 0.78rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 3px solid #38bdf8;
+}
+
+.conn-direction {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.conn-evidence {
+  display: block;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-top: 3px;
+}
+
+.ripple-inspector-empty {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.ripple-overview-stats {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.overview-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cockpit-toggle-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+

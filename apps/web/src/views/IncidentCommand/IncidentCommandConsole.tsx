@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { createPortal } from "react-dom";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";
 import { buildRippleGraph, type RippleNode } from "../../ripple/graph.js";
@@ -73,6 +74,30 @@ export function IncidentCommandConsole() {
   const level = useDial((s) => s.level);
   const language = useAppLanguage();
   const locked = phase !== "planning";
+
+  const [isGraphFullscreen, setIsGraphFullscreen] = useState(false);
+  const [selectedNode, setSelectedNode] = useState<RippleNode | null>(null);
+
+  // Keyboard and scroll management for fullscreen mode
+  useEffect(() => {
+    if (!isGraphFullscreen) return;
+    const originalOverflow = typeof document !== "undefined" ? document.body.style.overflow : "";
+    if (typeof document !== "undefined" && document.body) {
+      document.body.style.overflow = "hidden";
+    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsGraphFullscreen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      if (typeof document !== "undefined" && document.body) {
+        document.body.style.overflow = originalOverflow;
+      }
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isGraphFullscreen]);
 
   const { nodes, edges } = useMemo(() => buildRippleGraph(scenario), [scenario]);
   const laidOut = useForceLayout(nodes, edges, WIDTH, HEIGHT);
@@ -164,7 +189,17 @@ export function IncidentCommandConsole() {
 
       <CockpitTarget id="incident-ripple-graph" role="primary" priority={1} label="Dependency map">
         <section className="panel panel-span-full" aria-labelledby="ripple-graph-heading">
-          <h2 id="ripple-graph-heading">Dependency map</h2>
+          <div className="panel-head-row outpost-panel-head-flex">
+            <h2 id="ripple-graph-heading" style={{ margin: 0 }}>Dependency map</h2>
+            <button
+              type="button"
+              className="btn btn-tiny outpost-expand-btn"
+              onClick={() => setIsGraphFullscreen(true)}
+              title="Open System Dependency Network in Fullscreen (Ideal for video recording & presentations)"
+            >
+              <span aria-hidden="true">⛶</span> Fullscreen Network
+            </button>
+          </div>
           <svg
             viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
             width="100%"
@@ -472,6 +507,189 @@ export function IncidentCommandConsole() {
           </ul>
         </section>
       </CockpitTarget>
+
+      {isGraphFullscreen &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="outpost-fullscreen-backdrop"
+            onClick={() => setIsGraphFullscreen(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="System Dependency Network Fullscreen"
+          >
+            <div
+              className="outpost-fullscreen-modal"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="outpost-fullscreen-header">
+                <div className="outpost-fullscreen-title-group">
+                  <span className="outpost-fullscreen-icon" aria-hidden="true">🕸️</span>
+                  <div>
+                    <h2 className="outpost-fullscreen-title">
+                      System Dependency & Ripple Web — Live Architecture
+                    </h2>
+                    <p className="outpost-fullscreen-subtitle">
+                      Real-time interactive network of life support, power distribution, thermal loops, and crew health
+                    </p>
+                  </div>
+                </div>
+
+                <div className="outpost-fullscreen-actions">
+                  <div className="ripple-legend-group">
+                    <span className="legend-chip legend-chip-system">● Systems ({nodes.filter((n) => n.kind === "system").length})</span>
+                    <span className="legend-chip legend-chip-power">● Power</span>
+                    <span className="legend-chip legend-chip-domain">● Resources</span>
+                    <span className="legend-chip legend-chip-crew">● Crew</span>
+                  </div>
+                  <button
+                    type="button"
+                    className="btn btn-tiny outpost-fullscreen-close-btn"
+                    onClick={() => setIsGraphFullscreen(false)}
+                  >
+                    ✕ Exit Fullscreen (Esc)
+                  </button>
+                </div>
+              </div>
+
+              <div className="outpost-fullscreen-content outpost-fullscreen-ripple-body">
+                <div className="outpost-fullscreen-svg-wrap">
+                  <svg
+                    viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
+                    className="ripple-svg outpost-fullscreen-ripple-svg"
+                    role="img"
+                    aria-label="Fullscreen Dependency Graph"
+                  >
+                    {edgeLines.map(({ key, source, target, evidence }) =>
+                      source && target ? (
+                        <line
+                          key={key}
+                          x1={source.x}
+                          y1={source.y}
+                          x2={target.x}
+                          y2={target.y}
+                          className="ripple-edge"
+                        >
+                          <title>{evidence}</title>
+                        </line>
+                      ) : null,
+                    )}
+                    {laidOut.map((node) => {
+                      const status = nodeStatus(node);
+                      const r = NODE_RADIUS[node.kind];
+                      const isSelected = selectedNode?.id === node.id;
+                      return (
+                        <g
+                          key={node.id}
+                          className={`ripple-node ${status.className} ${isSelected ? "is-selected" : ""}`}
+                          onClick={() => setSelectedNode(node)}
+                          style={{ cursor: "pointer" }}
+                        >
+                          <circle cx={node.x} cy={node.y} r={r} />
+                          <text
+                            x={node.x}
+                            y={node.y - r - 6}
+                            textAnchor="middle"
+                            className="ripple-node-label"
+                          >
+                            {label(node)}
+                          </text>
+                          <text
+                            x={node.x}
+                            y={node.y + 4}
+                            textAnchor="middle"
+                            aria-hidden="true"
+                            className="ripple-node-glyph"
+                          >
+                            {status.glyph}
+                          </text>
+                        </g>
+                      );
+                    })}
+                  </svg>
+                </div>
+
+                <div className="ripple-inspector-sidebar">
+                  <h3 className="ripple-inspector-title">
+                    {selectedNode ? label(selectedNode) : "Node Telemetry Inspector"}
+                  </h3>
+                  {selectedNode ? (
+                    <div className="ripple-inspector-details">
+                      <div className="ripple-inspector-badge-row">
+                        <span className={`status-badge ${nodeStatus(selectedNode).className}`}>
+                          {nodeStatus(selectedNode).glyph} {nodeStatus(selectedNode).word}
+                        </span>
+                        <span className="node-kind-badge">
+                          Type: {selectedNode.kind.toUpperCase()}
+                        </span>
+                      </div>
+                      <p className="ripple-inspector-desc">
+                        {selectedNode.kind === "system"
+                          ? "Core habitat engineering subsystem. Failures or manual power shedding will propagate downstream to dependent life support modules."
+                          : selectedNode.kind === "power"
+                          ? "Main electrical bus & battery reserve. When power reserves drop below threshold, lowest-priority systems are automatically shed."
+                          : selectedNode.kind === "crew"
+                          ? "Crew health and vitality. Directly impacted by environmental conditions, radiation exposure, and oxygen/water availability."
+                          : "Consumable buffer or environmental metric. Dependent on system processing rates and crew metabolic demands."}
+                      </p>
+
+                      <div className="ripple-inspector-section">
+                        <h4>Connected Subsystems:</h4>
+                        <ul className="ripple-connected-list">
+                          {edges
+                            .filter((e) => e.target === selectedNode.id || e.source === selectedNode.id)
+                            .map((e) => {
+                              const otherId = e.source === selectedNode.id ? e.target : e.source;
+                              const isDownstream = e.source === selectedNode.id;
+                              return (
+                                <li key={`${e.source}->${e.target}`}>
+                                  <span className="conn-direction">
+                                    {isDownstream ? "↳ Drives: " : "↰ Requires: "}
+                                  </span>
+                                  <strong>{labelById(otherId)}</strong>
+                                  <span className="conn-evidence">{e.evidence}</span>
+                                </li>
+                              );
+                            })}
+                        </ul>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="ripple-inspector-empty">
+                      <p>
+                        Click any node in the dependency web to view real-time telemetry, failure cascade risks, and authentic NASA design evidence.
+                      </p>
+                      <div className="ripple-overview-stats">
+                        <div className="overview-stat-row">
+                          <span>Mission Status:</span>
+                          <strong style={{ color: "#38bdf8" }}>Active Simulation</strong>
+                        </div>
+                        <div className="overview-stat-row">
+                          <span>Living Crew:</span>
+                          <strong>
+                            {livingCrew.length} / {state.crew.length}
+                          </strong>
+                        </div>
+                        <div className="overview-stat-row">
+                          <span>Battery Reserve:</span>
+                          <strong>{(batteryFraction * 100).toFixed(0)}%</strong>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="outpost-fullscreen-footer">
+                <span>
+                  💡 <strong>Tip:</strong> Hover over edges to see engineering links · Click any node to open the cascade analysis drawer
+                </span>
+                <span>NASA ECLSS & Life Support Architecture Grounding</span>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
     </DashboardGrid>
   );
 }

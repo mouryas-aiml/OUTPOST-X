@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { environment, type Body } from "@outpost-x/sim";
 import { useRun } from "../store/run.js";
 
@@ -55,7 +56,29 @@ export function OrbitalView() {
   const [reloadCount, setReloadCount] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [slow, setSlow] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const src = `https://eyes.nasa.gov/apps/solar-system/#/${BODY_ROUTE[body]}?${EMBED_PARAMS}`;
+
+  // Keyboard and scroll management for fullscreen mode
+  useEffect(() => {
+    if (!isFullscreen) return;
+    const originalOverflow = typeof document !== "undefined" ? document.body.style.overflow : "";
+    if (typeof document !== "undefined" && document.body) {
+      document.body.style.overflow = "hidden";
+    }
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsFullscreen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      if (typeof document !== "undefined" && document.body) {
+        document.body.style.overflow = originalOverflow;
+      }
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isFullscreen]);
 
   // Every mount of this view is a fresh <iframe> — `App.tsx` only renders MissionCommandConsole
   // while that tab is active, so navigating away and back reloads NASA's own app from scratch
@@ -76,11 +99,21 @@ export function OrbitalView() {
 
   return (
     <section className="panel orbital-view panel-span-full" aria-labelledby="orbital-view-heading">
-      <div className="panel-head-row">
-        <h2 id="orbital-view-heading">Orbital display</h2>
-        <span className="orbital-view-state">
-          <span aria-hidden="true">●</span> LIVE, FROM NASA
-        </span>
+      <div className="panel-head-row outpost-panel-head-flex">
+        <div className="outpost-panel-title-wrap">
+          <h2 id="orbital-view-heading" style={{ margin: 0 }}>Orbital display</h2>
+          <span className="orbital-view-state">
+            <span aria-hidden="true">●</span> LIVE, FROM NASA
+          </span>
+        </div>
+        <button
+          type="button"
+          className="btn btn-tiny outpost-expand-btn"
+          onClick={() => setIsFullscreen(true)}
+          title="Open interactive 3D Orbital Explorer in Fullscreen (Ideal for video recording)"
+        >
+          <span aria-hidden="true">⛶</span> Fullscreen 3D View
+        </button>
       </div>
       <p className="panel-hint">
         {body === "mars"
@@ -161,6 +194,105 @@ export function OrbitalView() {
         , with its own NASA logo switched off via that app's own documented embed option, not
         NASA-branded content this project made itself.
       </p>
+
+      {isFullscreen &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="outpost-fullscreen-backdrop"
+            onClick={() => setIsFullscreen(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label="3D Orbital Explorer Fullscreen"
+          >
+            <div
+              className="outpost-fullscreen-modal"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="outpost-fullscreen-header">
+                <div className="outpost-fullscreen-title-group">
+                  <span className="outpost-fullscreen-icon" aria-hidden="true">🛰️</span>
+                  <div>
+                    <h2 className="outpost-fullscreen-title">
+                      NASA Eyes on the Solar System — 3D Orbital Explorer
+                    </h2>
+                    <p className="outpost-fullscreen-subtitle">
+                      Target: <strong>{body === "mars" ? "Mars (Planetary Surface & Orbits)" : "The Moon (Lunar Surface & Orbits)"}</strong> · Authenticated live telemetry from NASA Jet Propulsion Laboratory (JPL)
+                    </p>
+                  </div>
+                  <span className="orbital-view-state" style={{ marginLeft: "8px" }}>
+                    <span aria-hidden="true">●</span> LIVE FROM NASA
+                  </span>
+                </div>
+
+                <div className="outpost-fullscreen-actions">
+                  <button
+                    type="button"
+                    className="btn btn-tiny btn-quiet"
+                    onClick={() => setReloadCount((n) => n + 1)}
+                    title="Reload NASA 3D WebGL Engine"
+                  >
+                    🔄 Reload Engine
+                  </button>
+                  <a
+                    href={src}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-tiny btn-quiet"
+                    style={{ textDecoration: "none" }}
+                    title="Open NASA's original app directly in a new browser tab"
+                  >
+                    External Tab ↗
+                  </a>
+                  <button
+                    type="button"
+                    className="btn btn-tiny outpost-fullscreen-close-btn"
+                    onClick={() => setIsFullscreen(false)}
+                  >
+                    ✕ Exit Fullscreen (Esc)
+                  </button>
+                </div>
+              </div>
+
+              <div className="outpost-fullscreen-content">
+                <div className="orbital-iframe-container outpost-fullscreen-iframe-container">
+                  {!loaded && (
+                    <div className="orbital-loading-overlay" role="status">
+                      <span className="orbital-loading-spinner" aria-hidden="true" />
+                      <span>
+                        {slow
+                          ? "Still loading NASA's live 3D view — high-resolution textures can take a few moments."
+                          : "Loading NASA's live 3D planetary engine…"}
+                      </span>
+                    </div>
+                  )}
+                  <iframe
+                    key={`fs-${reloadCount}`}
+                    className="orbital-iframe outpost-fullscreen-iframe"
+                    src={src}
+                    title={`NASA Eyes on the Solar System: ${body === "mars" ? "Mars" : "the Moon"}, live fullscreen`}
+                    allowFullScreen
+                    onLoad={() => setLoaded(true)}
+                  />
+                </div>
+              </div>
+
+              <div className="outpost-fullscreen-footer">
+                <div className="outpost-fullscreen-instructions">
+                  <span>🖱️ <strong>Controls:</strong> Click & drag to rotate planetary globe · Scroll to zoom · Right-click drag to pan</span>
+                </div>
+                <div className="outpost-fullscreen-period-info">
+                  {body === "moon" ? (
+                    <span><strong>Real Orbital Period:</strong> {environment.lunarSiderealOrbitalPeriodDays.value} days around Earth</span>
+                  ) : (
+                    <span><strong>Real Orbital Periods:</strong> Mars: {environment.marsOrbitalPeriodDays.value} days · Earth: {environment.earthOrbitalPeriodDays.value} days around the Sun</span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
     </section>
   );
 }

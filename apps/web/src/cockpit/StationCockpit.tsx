@@ -182,7 +182,8 @@ export function StationCockpit({
   );
 
   const toggle = screenMap !== undefined && (
-    <div className="cockpit-toggle" role="group" aria-label="View style">
+    <div className="cockpit-toggle" role="group" aria-label="Display layout mode">
+      <span className="cockpit-toggle-label">LAYOUT:</span>
       <button
         type="button"
         className={`btn btn-tiny ${preference === "cockpit" ? "btn-active" : ""}`}
@@ -190,6 +191,7 @@ export function StationCockpit({
         onClick={() => {
           setPreference("cockpit");
         }}
+        title="Simulated shuttle cockpit with integrated monitors"
       >
         Cockpit
       </button>
@@ -200,6 +202,7 @@ export function StationCockpit({
         onClick={() => {
           setPreference("classic");
         }}
+        title="Unmerged full-width classic dashboard grid with expanded panels"
       >
         Classic
       </button>
