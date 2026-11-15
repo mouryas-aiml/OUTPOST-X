@@ -1,4 +1,4 @@
-# Source Verification Checklist — Sol Keeper
+# Source Verification Checklist — OUTPOST-X
 For: science teammate · Rebuilt 2026-10-30 · Items 1–50 are the original checklist, updated. Items 51–87 are values added since.
 
 ## What this is for

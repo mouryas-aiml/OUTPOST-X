@@ -72,7 +72,7 @@ test.describe("Tab navigation", () => {
   test("switches between station consoles, Debrief, and Briefing", async ({ page }) => {
     await gotoApp(page);
     await skipSetup(page);
-    await expect(page.locator("h1")).toHaveText("Sol Keeper");
+    await expect(page.locator("h1")).toHaveText("OUTPOST-X");
     await expect(page.getByText("Mission Briefing")).toBeVisible();
 
     await openTab(page, "Debrief");

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="OUTPOST-X favicon">
+  <defs>
+    <linearGradient id="fav-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1b35"/>
+      <stop offset="1" stop-color="#060d1a"/>
+    </linearGradient>
+    <linearGradient id="fav-dome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#0284c7" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="fav-orbit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#7dd3fc"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="160" height="160" rx="32" fill="url(#fav-bg)"/>
+  <!-- Planet surface glow -->
+  <ellipse cx="80" cy="118" rx="52" ry="16" fill="#f97316" opacity="0.15"/>
+  <!-- Ground -->
+  <line x1="24" y1="118" x2="136" y2="118" stroke="#f97316" stroke-width="2" opacity="0.6"/>
+  <!-- Dome -->
+  <path d="M54 118 Q54 86 80 84 Q106 86 106 118Z" fill="url(#fav-dome)" stroke="#38bdf8" stroke-width="2.5"/>
+  <!-- Dome struts -->
+  <line x1="80" y1="84" x2="80" y2="118" stroke="#7dd3fc" stroke-width="1.2" opacity="0.4"/>
+  <line x1="61" y1="102" x2="99" y2="102" stroke="#7dd3fc" stroke-width="1.2" opacity="0.4"/>
+  <!-- Base -->
+  <rect x="62" y="116" width="36" height="5" rx="2" fill="#0284c7"/>
+  <!-- Signal dish -->
+  <path d="M101 104 Q113 97 116 108" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="101" y1="104" x2="104" y2="118" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+  <!-- Signal waves -->
+  <path d="M113 93 Q122 89 128 97" fill="none" stroke="#38bdf8" stroke-width="1.8" opacity="0.75"/>
+  <path d="M117 84 Q130 79 137 90" fill="none" stroke="#38bdf8" stroke-width="1.2" opacity="0.45"/>
+  <!-- Orbit ring -->
+  <ellipse cx="80" cy="90" rx="62" ry="18" fill="none" stroke="url(#fav-orbit)" stroke-width="2" opacity="0.7" transform="rotate(-12 80 90)"/>
+  <!-- Satellite dot -->
+  <circle cx="134" cy="76" r="6" fill="#38bdf8" opacity="0.95"/>
+  <!-- Stars -->
+  <circle cx="34" cy="38" r="2" fill="white" opacity="0.8"/>
+  <circle cx="128" cy="28" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="22" cy="58" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="140" cy="50" r="2" fill="white" opacity="0.7"/>
+  <!-- X mark in top-right corner -->
+  <text x="126" y="52" font-family="Arial Black, sans-serif" font-size="24" font-weight="900" fill="#38bdf8" letter-spacing="-1">X</text>
+</svg>

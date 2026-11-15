@@ -9,7 +9,7 @@
  * (Power, Life Support, Comms, Incident Command, Mission Command); see CLAUDE.md's Station
  * section for why these are separate concepts that must not be conflated.
  */
-import type { StationId } from "@sol-keeper/sim";
+import type { StationId } from "@outpost-x/sim";
 import type { DialLevel, Language } from "../dial/types.js";
 import enTemplates from "./en/onboardingText.json" with { type: "json" };
 import bnTemplates from "./bn/onboardingText.json" with { type: "json" };

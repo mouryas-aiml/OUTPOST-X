@@ -1,4 +1,4 @@
-import type { ScenarioId } from "@sol-keeper/sim";
+import type { ScenarioId } from "@outpost-x/sim";
 
 /**
  * The scenarios' thematic mission name and one-line hint.

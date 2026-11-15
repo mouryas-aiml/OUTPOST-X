@@ -21,7 +21,7 @@ import {
   scaledWarningTimeHours,
   wouldResolveThisHour,
   type TickContext,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { useRun } from "../store/run.js";
 import { useDial } from "../store/dial.js";
 import { selectPendingIncident } from "../incidents/pendingIncident.js";

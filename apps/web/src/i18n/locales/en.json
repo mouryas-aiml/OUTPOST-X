@@ -1,6 +1,6 @@
 {
   "shareLink": {
-    "versionMismatch": "This link was made with an older version of Sol Keeper and can't be replayed here — starting a fresh mission instead.",
+    "versionMismatch": "This link was made with an older version of OUTPOST-X and can't be replayed here — starting a fresh mission instead.",
     "invalid": "This link isn't valid — starting a fresh mission instead.",
     "dismiss": "Dismiss",
     "createClassLink": "Create class link",
@@ -48,10 +48,10 @@
     "replayHint": "Anyone who opens this link gets the exact same mission, replayed to this exact point — same scenario, same seed, same incidents.",
     "dataSourcesHeading": "Data sources",
     "dataSourcesHint": "Every number in this simulation cites a NASA or peer-reviewed source. See the in-app Data Sources screen for the full list.",
-    "notAffiliated": "Not affiliated with or endorsed by NASA. Sol Keeper carries no NASA logo, insignia, or \"meatball\"."
+    "notAffiliated": "Not affiliated with or endorsed by NASA. OUTPOST-X carries no NASA logo, insignia, or \"meatball\"."
   },
   "tabs": {
-    "nav": "Sol Keeper views",
+    "nav": "OUTPOST-X views",
     "power": "Power",
     "lifeSupport": "Life Support",
     "comms": "Comms",

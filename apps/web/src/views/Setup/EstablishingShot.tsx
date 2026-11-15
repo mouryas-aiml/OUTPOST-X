@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { getScenario, type Body } from "@sol-keeper/sim";
+import { getScenario, type Body } from "@outpost-x/sim";
 import { useSetup } from "../../store/setup.js";
 import { useLiveOrSnapshot } from "../../data/liveOrSnapshot.js";
 import { ProvenanceBadge } from "../../components/ProvenanceBadge.js";

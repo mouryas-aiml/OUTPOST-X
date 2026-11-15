@@ -9,7 +9,7 @@
  * the exact column layout (a two-token date/time column, then delta, then deldot) only
  * showed up by looking at a real response.
  */
-import { units } from "@sol-keeper/sim";
+import { units } from "@outpost-x/sim";
 import type { ApiBody } from "./validate.js";
 
 const HORIZONS_COMMAND: Record<ApiBody, string> = {

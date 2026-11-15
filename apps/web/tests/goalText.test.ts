@@ -4,7 +4,7 @@
  * immediately rather than silently rendering its own machine key to a player.
  */
 import { describe, expect, it } from "vitest";
-import { SCENARIOS } from "@sol-keeper/sim";
+import { SCENARIOS } from "@outpost-x/sim";
 import { goalText, hasGoalTemplate } from "../src/i18n/goalText";
 import { DIAL_LEVELS } from "../src/dial/types";
 

@@ -3,7 +3,7 @@
  * could silently drift from:
  *   - docs/DATA_SOURCES.md itself (someone edits the Status column and forgets to re-run
  *     scripts/generate-source-verification.ts);
- *   - @sol-keeper/sim's own SOURCE_IDS (a new source is added to the sim but never gets a row).
+ *   - @outpost-x/sim's own SOURCE_IDS (a new source is added to the sim but never gets a row).
  *
  * Never asserts that any particular source *should* be verified — CLAUDE.md is explicit that
  * only the lead developer marks a row ☑, after checking the source document. This only checks
@@ -12,7 +12,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { SOURCE_IDS } from "@sol-keeper/sim";
+import { SOURCE_IDS } from "@outpost-x/sim";
 import { parseSourceVerification } from "../../../scripts/parseSourceVerification.js";
 import generatedJson from "../src/data/sourceVerification.generated.json" with { type: "json" };
 

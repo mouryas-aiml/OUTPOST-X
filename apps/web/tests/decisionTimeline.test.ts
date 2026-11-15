@@ -4,7 +4,7 @@
  * every incident-response code maps to that incident's own `IncidentDefinition.station`.
  */
 import { describe, expect, it } from "vitest";
-import { INCIDENT_CATALOG, type LogEntry } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, type LogEntry } from "@outpost-x/sim";
 import { decisionTimeline, stationForDecision } from "../src/dial/decisionTimeline.js";
 
 function entry(code: string, overrides: Partial<LogEntry> = {}): LogEntry {

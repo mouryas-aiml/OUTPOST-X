@@ -1,4 +1,4 @@
-import type { SourceId } from "@sol-keeper/sim";
+import type { SourceId } from "@outpost-x/sim";
 
 export type PassportLabel =
   | "Live"
@@ -617,7 +617,7 @@ export const DATA_PASSPORT: readonly PassportEntry[] = [
   },
   {
     id: "game-design-tuning",
-    name: "Sol Keeper Gameplay Balancing Curves",
+    name: "OUTPOST-X Gameplay Balancing Curves",
     source: "GAME-DESIGN",
     whatItDrives: "Thermal conductance values, failure rates, and crop photoperiod gameplay pacing curves.",
     whereYouSeeIt: "Simulation engine constants",

@@ -13,7 +13,7 @@
  *   roster's or a student's played-out decisions live — carries the input log as a compact
  *   byte-packed blob (user decision: a hand-rolled varint + base64url codec, no compression
  *   dependency; `binaryCodec.ts`). Its own enum tables (`SYSTEM_IDS`, `CREW_LOCATIONS`,
- *   `SURVIVAL_MODES`, `COMMS_PRIORITIES`, `KIND_TAGS`, and `@sol-keeper/sim`'s own
+ *   `SURVIVAL_MODES`, `COMMS_PRIORITIES`, `KIND_TAGS`, and `@outpost-x/sim`'s own
  *   `STATION_IDS`/`INCIDENT_CATALOG` order) ARE packed indices, unlike the query string's —
  *   safely so, because any change to the sim types/catalog they mirror requires a
  *   `SIM_VERSION` bump (CLAUDE.md's own bump rule), and `decodeRunLinkQuery` rejects a
@@ -56,7 +56,7 @@ import {
   type SystemId,
   type ThermalControlMode,
   type WaterReclamationMode,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { ByteReader, fromBase64Url, toBase64Url, writeVarint } from "./binaryCodec.js";
 
 /** A uint32 — matches what `createRngState` expects (`packages/sim`'s own `seedStream`
@@ -282,7 +282,7 @@ const THERMAL_CONTROL_MODES: readonly ThermalControlMode[] = ["comfort", "powerS
 const CROP_LIGHT_SCHEDULES: readonly CropLightSchedule[] = ["low", "nominal", "extended"];
 const MOXIE_MODES: readonly MoxieMode[] = ["off", "eco", "full"];
 const RESEARCH_TASK_IDS: readonly ResearchTaskId[] = ["labRun", "sampleTrip", "extendedExperiment"];
-/** Not exported anywhere in `@sol-keeper/sim` (unlike `STATION_IDS`) — mirrors the
+/** Not exported anywhere in `@outpost-x/sim` (unlike `STATION_IDS`) — mirrors the
  *  `SystemId` union in `packages/sim/src/types.ts` exactly; a change to that union already
  *  requires touching `data/scenarios/*.ts` or `constants.ts`, both `SIM_VERSION` bump
  *  triggers, so this table's own order stays safe under the same umbrella described in the

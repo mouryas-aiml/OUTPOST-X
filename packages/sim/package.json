@@ -1,9 +1,9 @@
 {
-  "name": "@sol-keeper/sim",
+  "name": "@outpost-x/sim",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Pure, deterministic outpost simulation for Sol Keeper. No DOM, no I/O, no wall clock.",
+  "description": "Pure, deterministic outpost simulation for OUTPOST-X. No DOM, no I/O, no wall clock.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {

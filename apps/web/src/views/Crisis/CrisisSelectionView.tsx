@@ -16,7 +16,7 @@ import {
   crisisSpe1972,
   crisisMirFire,
   type CrisisScenario,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";
 import { useAppLanguage } from "../../i18n/useAppLanguage.js";
@@ -232,7 +232,7 @@ export function CrisisSelectionView({ onLaunchCrisis }: CrisisSelectionViewProps
               <ul className="crisis-materials-list">
                 {selectedCrisis.availableMaterials.map((mat, i) => (
                   <li key={i} className="crisis-material-chip">
-                    <span className="bullet">■</span> {mat}
+                    <span className="bullet">*</span> {mat}
                   </li>
                 ))}
               </ul>

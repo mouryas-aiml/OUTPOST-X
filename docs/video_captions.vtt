@@ -1,4 +1,4 @@
-WEBVTT - Sol Keeper Project Presentation Captions
+WEBVTT - OUTPOST-X Project Presentation Captions
 
 00:00.000 --> 00:05.500
 When astronauts establish bases on the Moon and Mars, survival isn’t just about courage—it’s an unyielding math problem.
@@ -10,7 +10,7 @@ Every watt of electricity, every breath of oxygen, and every gram of water must 
 Yet space education for kids often stays trapped in posters and abstract facts.
 
 00:15.000 --> 00:19.500
-Meet Sol Keeper. We built a single, deterministic space outpost simulation engine and created the Reality Dial.
+Meet OUTPOST-X. We built a single, deterministic space outpost simulation engine and created the Reality Dial.
 
 00:19.500 --> 00:25.000
 For younger cadets ages 7 to 12, the station speaks in intuitive status words and icons.
@@ -22,7 +22,7 @@ For middle schoolers, it speaks in real units. For high schoolers and teachers, 
 The simulation underneath never changes—only how it’s explained.
 
 00:35.000 --> 00:40.000
-Nothing in Sol Keeper is invented silently. Every constant traces back to authenticated NASA standards:
+Nothing in OUTPOST-X is invented silently. Every constant traces back to authenticated NASA standards:
 
 00:40.000 --> 00:45.000
 BVAD metabolic rates, OCHMO radiation ceilings, and Ames mass margins.
@@ -34,7 +34,7 @@ When a solar storm strikes, it’s driven by NASA DONKI space weather telemetry.
 Real planetary orbital photography from NASA Moon Trek and Mars Trek brings every landing site to life.
 
 01:00.000 --> 01:06.000
-In Sol Keeper, no choice is free. Running the Brine Processor recovers 98% of your water, but costs 1.5 crew-hours every single day.
+In OUTPOST-X, no choice is free. Running the Brine Processor recovers 98% of your water, but costs 1.5 crew-hours every single day.
 
 01:06.000 --> 01:14.000
 Enriching greenhouse CO₂ speeds up crop growth, but risks lethal hypoxia if untracked.
@@ -52,7 +52,7 @@ racing to regolith shelters during the August 1972 solar storm, or containing th
 Afterward, students test their grasp with Big Idea concept checks and share reproducible run links with their teachers.
 
 01:45.000 --> 01:52.000
-Sol Keeper requires zero logins, zero downloads, and works completely offline as a Progressive Web App in English and Bangla.
+OUTPOST-X requires zero logins, zero downloads, and works completely offline as a Progressive Web App in English and Bangla.
 
 01:52.000 --> 02:00.000
 Tested across 75 test suites and 4,050 balance seeds, it’s built for real classrooms and real young astronauts. Welcome to deep space survival.

@@ -12,24 +12,30 @@
   align-self: flex-start;
   font-size: 0.78rem;
   padding: 2px 6px;
-  color: #58a6ff;
+  color: var(--accent, #38bdf8);
   margin-top: -2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
 }
 
 .air-details-toggle:hover {
   text-decoration: underline;
+  color: #7dd3fc;
 }
 
 .air-details-card {
-  background: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 6px;
+  background: var(--bg-deep, #060d1a);
+  border: 1px solid var(--border-subtle, rgba(43, 53, 87, 0.8));
+  border-radius: var(--radius-sm, 6px);
   padding: 8px 12px;
   margin-top: 4px;
   font-size: 0.82rem;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .air-detail-row {
@@ -39,12 +45,12 @@
 }
 
 .air-detail-name {
-  color: #8b949e;
+  color: var(--text-dim, #91abc2);
   font-weight: 500;
 }
 
 .air-detail-val {
   font-weight: 600;
-  color: #f0f6fc;
+  color: var(--text, #e8f4ff);
+  font-family: var(--font-mono, monospace);
 }
-

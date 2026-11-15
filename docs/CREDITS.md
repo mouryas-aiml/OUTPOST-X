@@ -1,12 +1,12 @@
 # Credits, Attributions & Open Source Licenses
 
-Sol Keeper is an educational mission trainer created for the NASA Space Apps Challenge 2026. Every calculation, threshold, and operational trade-off in the simulation is grounded in published space agency research, peer-reviewed literature, and open data.
+OUTPOST-X is an educational mission trainer created for the NASA Space Apps Challenge 2026. Every calculation, threshold, and operational trade-off in the simulation is grounded in published space agency research, peer-reviewed literature, and open data.
 
 ---
 
 ## 1. Legal Disclaimer & Agency Attribution
 
-- **NASA Disclaimer**: Sol Keeper is not affiliated with, endorsed by, or sponsored by NASA or any other government agency.
+- **NASA Disclaimer**: OUTPOST-X is not affiliated with, endorsed by, or sponsored by NASA or any other government agency.
 - **NASA Insignia**: In compliance with NASA Space Apps Challenge branding policies, **no NASA insignia, logo, identifier, or "meatball" appears** anywhere within the application or its station console artwork.
 - **Data Attribution**: All mission data, physical constants, and planetary photography are credited to NASA, NOAA, NIOSH, NCRP, and the respective academic researchers cited throughout the simulation and Data Passport.
 
@@ -16,7 +16,7 @@ Sol Keeper is an educational mission trainer created for the NASA Space Apps Cha
 
 All runtime dependencies utilized by `apps/web` and `packages/sim` were generated and verified directly using `pnpm licenses list --prod`:
 
-| License | Package | Version | Homepage / Repository | Usage in Sol Keeper |
+| License | Package | Version | Homepage / Repository | Usage in OUTPOST-X |
 | :--- | :--- | :--- | :--- | :--- |
 | **0BSD** | `tslib` | 2.8.1 | https://www.typescriptlang.org/ | Runtime helper library for TypeScript |
 | **Apache-2.0** | `typescript` | 5.9.3 | https://www.typescriptlang.org/ | Static typing and language execution |
@@ -47,14 +47,14 @@ All runtime dependencies utilized by `apps/web` and `packages/sim` were generate
 | **MIT** | `@types/react` | 18.3.31 | DefinitelyTyped | TypeScript definitions for React |
 
 - **`packages/sim` Dependencies**: 0 runtime dependencies. The simulation engine is 100% pure, self-contained deterministic TypeScript.
-- **Fonts**: Sol Keeper bundles no external webfont binaries. The application relies entirely on modern OS system font stacks (`system-ui, -apple-system, "Segoe UI", Roboto, sans-serif` and `ui-monospace, "SF Mono", Menlo, monospace`).
+- **Fonts**: OUTPOST-X bundles no external webfont binaries. The application relies entirely on modern OS system font stacks (`system-ui, -apple-system, "Segoe UI", Roboto, sans-serif` and `ui-monospace, "SF Mono", Menlo, monospace`).
 - **Icon Sets**: Feather Icons (`react-icons/fi`, MIT License) and Lucide Icons (`lucide-react`, ISC License).
 
 ---
 
 ## 3. Scientific Data Registry & Citations
 
-Every numerical value used in Sol Keeper is mapped to a registered `SourceId` in [`docs/DATA_SOURCES.md`](DATA_SOURCES.md) and [`apps/web/src/data/sourceRegistry.ts`](../apps/web/src/data/sourceRegistry.ts):
+Every numerical value used in OUTPOST-X is mapped to a registered `SourceId` in [`docs/DATA_SOURCES.md`](DATA_SOURCES.md) and [`apps/web/src/data/sourceRegistry.ts`](../apps/web/src/data/sourceRegistry.ts):
 
 ### NASA Standards & Technical Publications
 - **BVAD-2022**: *NASA Life Support Baseline Values and Assumptions Document*, NASA/TP-20210024855 (Metabolic baseline NASA/TP-2015-218570). Drives crew $O_2$, $CO_2$, water and caloric consumption, crop yields, and ISS baseline power loads.
@@ -119,7 +119,7 @@ Every numerical value used in Sol Keeper is mapped to a registered `SourceId` in
 
 ## 5. Artificial Intelligence & Privacy Disclosure
 
-- **Development Tooling**: Sol Keeper was developed with **Claude Code** (Anthropic) for engineering design, verification scripting, and pair programming.
+- **Development Tooling**: OUTPOST-X was developed with **Claude Code** (Anthropic) for engineering design, verification scripting, and pair programming.
 - **AI-Generated Media**:
   - The hero background video `apps/web/public/videos/launch-windows-astronaut.mp4` is an AI-generated artistic video depicting an astronaut on a planetary surface.
 - **Runtime AI & Privacy Guarantee**:

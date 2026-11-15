@@ -9,7 +9,7 @@ import {
   rationKgPerCrewDay,
   survivalModes,
   type SimState,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import {
   statusFromBand,
   statusFromCeiling,

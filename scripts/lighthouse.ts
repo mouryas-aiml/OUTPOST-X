@@ -70,7 +70,7 @@ async function main(): Promise<void> {
 
   console.log("Building apps/web...");
   await new Promise<void>((resolve, reject) => {
-    const build = spawn("pnpm", ["--filter", "@sol-keeper/web", "run", "build"], {
+    const build = spawn("pnpm", ["--filter", "@outpost-x/web", "run", "build"], {
       stdio: "inherit",
       shell: process.platform === "win32",
     });
@@ -80,7 +80,7 @@ async function main(): Promise<void> {
   console.log(`Starting preview server on port ${PREVIEW_PORT}...`);
   const preview = spawn(
     "pnpm",
-    ["--filter", "@sol-keeper/web", "exec", "vite", "preview", "--port", String(PREVIEW_PORT), "--strictPort"],
+    ["--filter", "@outpost-x/web", "exec", "vite", "preview", "--port", String(PREVIEW_PORT), "--strictPort"],
     { stdio: "ignore", shell: process.platform === "win32" },
   );
 

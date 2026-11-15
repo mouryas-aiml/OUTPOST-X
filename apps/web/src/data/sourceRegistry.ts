@@ -1,16 +1,16 @@
 /**
  * Display metadata for every `SourceId` — title, link, what it backs.
  *
- * `@sol-keeper/sim`'s `SourceId` union only needs to exist for the typechecker (brief rule
+ * `@outpost-x/sim`'s `SourceId` union only needs to exist for the typechecker (brief rule
  * 1: a constant cannot name a source that isn't real). It carries no title or URL, because
  * the simulation has no business rendering a citation. This manifest is that missing half,
  * kept in the client rather than the sim package, and mirrors docs/DATA_SOURCES.md by hand.
  *
  * Coverage is enforced by the type system, not a test: `Record<SourceId, SourceInfo>` makes
- * a missing entry a `tsc` error the moment `@sol-keeper/sim` adds a new `SourceId`, in the
+ * a missing entry a `tsc` error the moment `@outpost-x/sim` adds a new `SourceId`, in the
  * same spirit as `validation/constants.test.ts` checking the sim against the markdown.
  */
-import type { SourceId } from "@sol-keeper/sim";
+import type { SourceId } from "@outpost-x/sim";
 
 export interface SourceInfo {
   readonly title: string;
@@ -141,7 +141,7 @@ export const SOURCE_REGISTRY: Record<SourceId, SourceInfo> = {
     usedFor: "molar masses, the gas constant, mmHg, the astronomical unit, light-time per AU",
   },
   "GAME-DESIGN": {
-    title: "Sol Keeper gameplay tuning — not a NASA source",
+    title: "OUTPOST-X gameplay tuning — not a NASA source",
     usedFor: "shielding curves, thermal conductance, failure rates, crop photoperiod, cell efficiency",
   },
   "NASA-SPACEBIO-1975": {

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import type { TFunction } from "i18next";
 import { FiFileText, FiRotateCcw } from "react-icons/fi";
-import { causalCascade, directEffects, isCrisisScenario, type Body, type LogEntry, type RunStatus, type StationId } from "@sol-keeper/sim";
+import { causalCascade, directEffects, isCrisisScenario, type Body, type LogEntry, type RunStatus, type StationId } from "@outpost-x/sim";
 import { CrisisDebriefPanel } from "./CrisisDebriefPanel.js";
 import { ScoreCard } from "../../components/debrief/ScoreCard.js";
 import { useDial } from "../../store/dial.js";

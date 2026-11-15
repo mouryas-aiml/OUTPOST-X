@@ -10,7 +10,7 @@
  * declared trade-off fields (`crewHoursCost`/`sparesCost`/`permanentPenalty`/`leavesOngoing`)
  * DecisionCard.tsx already renders for the option that WAS chosen, for the ones that weren't.
  */
-import { INCIDENT_CATALOG, type IncidentResponse, type LogEntry } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, type IncidentResponse, type LogEntry } from "@outpost-x/sim";
 import type { DialLevel, Language } from "./types.js";
 import { systemLabel } from "./labels.js";
 import {

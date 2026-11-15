@@ -15,7 +15,7 @@
  * (still what "Copy report link" and the done-when proof both do) always agree: a replay is
  * nothing but the same recorded inputs applied through the same `applyInput` seam either way.
  */
-import { tick as simTick, type RecordedInput, type RunInput } from "@sol-keeper/sim";
+import { tick as simTick, type RecordedInput, type RunInput } from "@outpost-x/sim";
 import { create } from "zustand";
 import { useRun, type Speed } from "./run.js";
 

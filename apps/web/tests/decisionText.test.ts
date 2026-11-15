@@ -4,7 +4,7 @@
  * catalog.
  */
 import { describe, expect, it } from "vitest";
-import { INCIDENT_CATALOG } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG } from "@outpost-x/sim";
 import { decisionText, hasDecisionTemplate } from "../src/i18n/decisionText";
 import { DIAL_LEVELS } from "../src/dial/types";
 

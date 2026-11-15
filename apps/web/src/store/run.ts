@@ -7,7 +7,7 @@
  * whether object identity changed, so components select primitives out of the live state
  * and `version` exists purely to make each tick a distinct store update.
  *
- * Nothing here decides anything about the simulation. All the rules live in @sol-keeper/sim.
+ * Nothing here decides anything about the simulation. All the rules live in @outpost-x/sim.
  */
 import { create, type StoreApi } from "zustand";
 import {
@@ -37,7 +37,7 @@ import {
   type ThermalControlMode,
   type TickContext,
   type WaterReclamationMode,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { buildResourceSummary } from "../dial/resourceSummary.js";
 import type { StatusLevel } from "../components/status.js";
 import type { RunLinkConfig } from "../share/runLink.js";
@@ -153,7 +153,7 @@ interface RunStore {
    *  `undefined` once dismissed (dismissSolSummary) or before any sol has ever ended. */
   justEndedSol: { startHour: number; endHour: number } | undefined;
   /** M10.4: every player decision so far, tagged with the `state.hour` it was made at — the
-   *  input `@sol-keeper/sim`'s `replayRun` needs to reproduce this exact run byte-identically
+   *  input `@outpost-x/sim`'s `replayRun` needs to reproduce this exact run byte-identically
    *  from nothing but `params`/`scenario` (M10's own done-when bar). Appended to, never
    *  mutated or reordered, by the same six actions below that used to mutate `state` with no
    *  record at all. */
@@ -187,7 +187,7 @@ interface RunStore {
   ) => void;
   setSurvivalMode: (mode: SurvivalMode) => void;
   /** Player request (M9.x): a real lever in nominal conditions, not just during an incident —
-   *  see Co2ScrubberMode's own doc comment (@sol-keeper/sim) for the trade-off this controls. */
+   *  see Co2ScrubberMode's own doc comment (@outpost-x/sim) for the trade-off this controls. */
   setCo2ScrubberMode: (mode: Co2ScrubberMode) => void;
   /** Player request (M9.x): "quiet sol" interactivity — a routine, any-sol maintenance action
    *  (Mars only), not gated behind the one scripted dust-storm incident. A no-op (silently, the
@@ -196,22 +196,22 @@ interface RunStore {
    *  it would actually do something. */
   cleanSolarArrays: () => void;
   /** Player request (M9.x batch 2): the Brine Processor Assembly toggle — see
-   *  WaterReclamationMode's own doc comment (@sol-keeper/sim) for the trade-off. */
+   *  WaterReclamationMode's own doc comment (@outpost-x/sim) for the trade-off. */
   setWaterReclamationMode: (mode: WaterReclamationMode) => void;
   /** Player request (M9.x batch 2): the thermalControl duty-cycle toggle — see
-   *  ThermalControlMode's own doc comment (@sol-keeper/sim) for the scenario-dependent risk. */
+   *  ThermalControlMode's own doc comment (@outpost-x/sim) for the scenario-dependent risk. */
   setThermalControlMode: (mode: ThermalControlMode) => void;
   /** Player request (M9.x batch 2): raises the day's crew-hours ceiling at the real cost of
    *  fatigue on whatever's actually spent above the un-boosted budget — see
-   *  CrewHoursState.overtimeAuthorized's own doc comment (@sol-keeper/sim). */
+   *  CrewHoursState.overtimeAuthorized's own doc comment (@outpost-x/sim). */
   setOvertimeAuthorized: (authorized: boolean) => void;
   /** Player request: Habitat page's "quiet sol" scheduled-maintenance lever — see
-   *  SystemState.maintenanceCreditUntilHour's own doc comment (@sol-keeper/sim). A no-op
+   *  SystemState.maintenanceCreditUntilHour's own doc comment (@outpost-x/sim). A no-op
    *  (same "invalid target"/"can't afford it" discipline every other lever here uses) when
    *  the system doesn't exist for this scenario or today's crew-hours budget can't cover it. */
   performScheduledMaintenance: (systemId: SystemId) => void;
   /** Player request: Incident Command's print-a-spare lever (NASA AMF-inspired) — see
-   *  management.printSpareWallClockHours's own doc comment (@sol-keeper/sim). The spare
+   *  management.printSpareWallClockHours's own doc comment (@outpost-x/sim). The spare
    *  itself appears only once real wall-clock time has passed, not immediately. */
   printSpare: (systemId: SystemId) => void;
   /** Player request: Incident Command's repair-queue reordering — the same swap-with-

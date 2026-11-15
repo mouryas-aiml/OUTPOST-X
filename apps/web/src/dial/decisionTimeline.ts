@@ -4,7 +4,7 @@
  * Reads only the log's own stable `kind`/`code` (never rendered prose, brief rule 4), so this
  * can never drift from what `packages/sim`'s `applyInput`/`incidentsStage` actually log.
  */
-import { INCIDENT_CATALOG, type LogEntry, type StationId } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, type LogEntry, type StationId } from "@outpost-x/sim";
 
 /** The five player decisions `applyInput` (packages/sim/src/engine/replay.ts) logs, mapped
  *  to the console that actually owns each control — PowerPriorities (power), rations on

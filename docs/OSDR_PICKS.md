@@ -1,4 +1,4 @@
-# OSDR Picks — astronaut-science cards for Sol Keeper
+# OSDR Picks — astronaut-science cards for OUTPOST-X
 
 Research review completed: **2026-11-01**. This revision updates the original shortlist proposed 2026-10-28.
 
@@ -161,7 +161,7 @@ docs/api-samples/radlab_ALTEA-Survey_2011-08-01_2011-09-01.json
 
 ### Beyond-ISS RadLab data
 
-The earlier question about rover or beyond-low-Earth-orbit data is resolved: RadLab Release 1.1.2 lists CRaTER-D1D2 aboard the Lunar Reconnaissance Orbiter in Moon orbit, Liulin-MO aboard ExoMars Trace Gas Orbiter during Mars cruise and Mars orbit, and MSL/RAD aboard Curiosity on the Mars surface. This confirms that RadLab includes beyond-ISS instruments. It does **not** establish that those specific series provide dose-equivalent values; inspect their available measurement fields before comparing them with Sol Keeper's mSv/day constants.
+The earlier question about rover or beyond-low-Earth-orbit data is resolved: RadLab Release 1.1.2 lists CRaTER-D1D2 aboard the Lunar Reconnaissance Orbiter in Moon orbit, Liulin-MO aboard ExoMars Trace Gas Orbiter during Mars cruise and Mars orbit, and MSL/RAD aboard Curiosity on the Mars surface. This confirms that RadLab includes beyond-ISS instruments. It does **not** establish that those specific series provide dose-equivalent values; inspect their available measurement fields before comparing them with OUTPOST-X's mSv/day constants.
 
 ### Optional stretch — ISS air / CO₂
 

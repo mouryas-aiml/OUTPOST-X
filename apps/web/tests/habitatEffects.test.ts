@@ -5,7 +5,7 @@
  * that path can't observe a post-reset mutation).
  */
 import { describe, expect, it } from "vitest";
-import { createRun, getScenario, type Params } from "@sol-keeper/sim";
+import { createRun, getScenario, type Params } from "@outpost-x/sim";
 import { habitatEffects } from "../src/dial/habitatEffects.js";
 
 const params: Params = {

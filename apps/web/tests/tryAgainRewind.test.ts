@@ -11,7 +11,7 @@ import {
   type Params,
   type RecordedInput,
   type TickContext,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { useRun } from "../src/store/run.js";
 import { getMissionOfTheDayInfo } from "../src/components/MissionOfTheDayCard.js";
 

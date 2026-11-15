@@ -1,4 +1,4 @@
-import type { StationId } from "@sol-keeper/sim";
+import type { StationId } from "@outpost-x/sim";
 import { useOnboarding } from "../store/onboarding.js";
 import { useDial } from "../store/dial.js";
 import { COACH_MARK_ORDER, coachMarkText } from "../i18n/onboardingText.js";

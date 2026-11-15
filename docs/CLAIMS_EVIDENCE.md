@@ -1,6 +1,6 @@
 # Claims & Evidence Matrix
 
-This document provides a comprehensive audit of every strong claim made across the Sol Keeper repository, `README.md`, video script, and project page. Every claim is cross-referenced directly against an automated test suite, an authenticated entry in the **Data Passport** (`docs/DATA_PASSPORT.md`), or the automated simulation balance report (`docs/BALANCE.md`).
+This document provides a comprehensive audit of every strong claim made across the OUTPOST-X repository, `README.md`, video script, and project page. Every claim is cross-referenced directly against an automated test suite, an authenticated entry in the **Data Passport** (`docs/DATA_PASSPORT.md`), or the automated simulation balance report (`docs/BALANCE.md`).
 
 A dedicated section lists every known limitation, unverified citation, or claim lacking direct empirical measurement.
 

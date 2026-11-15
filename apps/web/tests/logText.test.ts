@@ -5,7 +5,7 @@
  * read-through and is wrong. These tests check the tables mechanically instead.
  */
 import { describe, expect, it } from "vitest";
-import type { LogEntry } from "@sol-keeper/sim";
+import type { LogEntry } from "@outpost-x/sim";
 import {
   CADET_LOG_TEMPLATES,
   COMMANDER_LOG_TEMPLATES,

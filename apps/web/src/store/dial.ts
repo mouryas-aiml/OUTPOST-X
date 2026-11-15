@@ -50,7 +50,7 @@ export const useDial = create<DialStore>()(
       },
     }),
     {
-      name: "sol-keeper.dial-level",
+      name: "outpost-x.dial-level",
       storage: createJSONStorage(() => safeLocalStorage),
     },
   ),

@@ -28,7 +28,7 @@ import bn from "./locales/bn.json";
 export const SUPPORTED_LANGUAGES = ["en", "bn"] as const;
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
 
-const STORAGE_KEY = "sol-keeper-language";
+const STORAGE_KEY = "outpost-x-language";
 
 function loadStoredLanguage(): SupportedLanguage {
   try {

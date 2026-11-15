@@ -181,7 +181,7 @@ export function CreditsView({ onClose }: CreditsViewProps) {
                   <th style={{ padding: "0.5rem" }}>Package</th>
                   <th style={{ padding: "0.5rem" }}>Version</th>
                   <th style={{ padding: "0.5rem" }}>License</th>
-                  <th style={{ padding: "0.5rem" }}>Role in Sol Keeper</th>
+                  <th style={{ padding: "0.5rem" }}>Role in OUTPOST-X</th>
                 </tr>
               </thead>
               <tbody>
@@ -219,7 +219,7 @@ export function CreditsView({ onClose }: CreditsViewProps) {
               <strong>Simulation Architecture:</strong> <code>packages/sim</code> has <strong>0 runtime dependencies</strong>. It is written in 100% pure deterministic TypeScript with no DOM, no wall clock, and no network I/O.
             </p>
             <p style={{ margin: 0 }}>
-              <strong>Fonts & Icons:</strong> Sol Keeper bundles no external webfont files (relying exclusively on system font stacks: <code>system-ui</code> and <code>ui-monospace</code>). Iconography is powered by Feather Icons (<code>react-icons/fi</code>, MIT) and Lucide (<code>lucide-react</code>, ISC).
+              <strong>Fonts & Icons:</strong> OUTPOST-X bundles no external webfont files (relying exclusively on system font stacks: <code>system-ui</code> and <code>ui-monospace</code>). Iconography is powered by Feather Icons (<code>react-icons/fi</code>, MIT) and Lucide (<code>lucide-react</code>, ISC).
             </p>
           </div>
         </section>

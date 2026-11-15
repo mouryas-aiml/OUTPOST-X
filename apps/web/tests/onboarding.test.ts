@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { useOnboarding } from "../src/store/onboarding";
 import { COACH_MARK_ORDER, coachMarkText } from "../src/i18n/onboardingText";
 import { DIAL_LEVELS } from "../src/dial/types";
-import type { StationId } from "@sol-keeper/sim";
+import type { StationId } from "@outpost-x/sim";
 
 describe("store/onboarding", () => {
   it("defaults to not seen, step 0", () => {

@@ -3,7 +3,7 @@ import "../src/i18n/config.js";
 import { renderToString } from "react-dom/server";
 import { ScoreCard } from "../src/components/debrief/ScoreCard.js";
 import { useDial } from "../src/store/dial.js";
-import { SCENARIOS, createInitialState, prudentBot, runWithBot, scoreMission } from "@sol-keeper/sim";
+import { SCENARIOS, createInitialState, prudentBot, runWithBot, scoreMission } from "@outpost-x/sim";
 
 describe("ScoreCard Component (M9.4)", () => {
   function getSampleScore() {

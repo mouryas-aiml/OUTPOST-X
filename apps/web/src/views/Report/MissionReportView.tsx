@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { FiRotateCcw } from "react-icons/fi";
-import { causalCascade, directEffects, runFingerprint, type Body, type LogEntry, type RunStatus, type StationId } from "@sol-keeper/sim";
+import { causalCascade, directEffects, runFingerprint, type Body, type LogEntry, type RunStatus, type StationId } from "@outpost-x/sim";
 import { useDial } from "../../store/dial.js";
 import { useRun } from "../../store/run.js";
 import { logText } from "../../i18n/logText.js";

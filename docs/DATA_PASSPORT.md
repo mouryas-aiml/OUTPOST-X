@@ -1,8 +1,8 @@
-# Sol Keeper Data Passport
+# OUTPOST-X Data Passport
 
-The **Data Passport** catalogs every real dataset, space agency standard, and astronomical telemetry source integrated into the Sol Keeper simulation.
+The **Data Passport** catalogs every real dataset, space agency standard, and astronomical telemetry source integrated into the OUTPOST-X simulation.
 
-Sol Keeper is grounded exclusively in peer-reviewed scientific literature, official NASA technical documentation, and live NASA APIs. Every number maps directly to a verified source.
+OUTPOST-X is grounded exclusively in peer-reviewed scientific literature, official NASA technical documentation, and live NASA APIs. Every number maps directly to a verified source.
 
 ---
 
@@ -63,7 +63,7 @@ Sol Keeper is grounded exclusively in peer-reviewed scientific literature, offic
 | **Lunar Habitat Maintenance Hours** | `NTRS-LUNAR-MAINT-CREWTIME`| Maintenance crew-hour budget (24.7 CM-h expected over 28-day 2-crew mission) | Habitat View (Maintenance) | `Published` | read by a person | ☑ Verified (`TR 2026-11-02`) | [NASA NTRS](https://ntrs.nasa.gov/citations/20220002626) |
 | **ISS 3D Printer Ratchet Wrench** | `NASA-AMF-RATCHET` | Fabrication latency (4 hours wall-clock time per 3D printed mechanical spare) | Incident Command (Print spare) | `Published` | read by a person | ☑ Verified (`TR 2026-11-02`) | [NASA ISS](https://www.nasa.gov/missions/station/space-station-3-d-printer-builds-ratchet-wrench-to-complete-first-phase-of-operations/) |
 | **Water Splitting Stoichiometry** | `STOICHIOMETRY` | Theoretical water electrolysis ratio (1.125 kg H₂O per kg O₂) and gas constants | Atmosphere & Water physics | `Derived` | n/a | ☑ Verified | Textbooks |
-| **Gameplay Balancing Curves** | `GAME-DESIGN` | Thermal conductance, failure rates, and crop photoperiod pacing curves | Simulation engine constants | `Tuned` | n/a | ☑ Verified | Sol Keeper team |
+| **Gameplay Balancing Curves** | `GAME-DESIGN` | Thermal conductance, failure rates, and crop photoperiod pacing curves | Simulation engine constants | `Tuned` | n/a | ☑ Verified | OUTPOST-X team |
 | **DONKI Space Weather Feed** | `API-DONKI` | Real-time and archived solar flares (FLR), SEPs, and coronal mass ejections | Power Console, Today on Sun | `Live` / `Snapshot` | read by a person | ☑ Verified | [NASA DONKI](https://api.nasa.gov/DONKI/) |
 | **JPL Horizons Ephemeris** | `API-HORIZONS` | Real-time Earth-Mars and Earth-Moon orbital distance and radio light-time | Comms Console (Signal delay) | `Live` | read by a person | ☑ Verified | [JPL Horizons](https://ssd.jpl.nasa.gov/api/horizons.api) |
 | **NASA Image & Video Library** | `API-IMAGES` | Historical mission hardware photos (ISS CDRA, Veggie, Perseverance MOXIE) | Fact Card Galleries | `Archived` | read by a person | ☑ Verified | [NASA Images](https://images-api.nasa.gov/search) |

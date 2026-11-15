@@ -1,6 +1,6 @@
 # Official Challenge Statement Audit
 
-This document is an exhaustive audit of the official NASA Space Apps Challenge text (`docs/CHALLENGE_STATEMENT.md`) against the Sol Keeper codebase and simulation engine.
+This document is an exhaustive audit of the official NASA Space Apps Challenge text (`docs/CHALLENGE_STATEMENT.md`) against the OUTPOST-X codebase and simulation engine.
 
 Every requirement, potential consideration, and "stand out" suggestion from the official text is evaluated with a status of **Done**, **Partial**, or **Missing**, accompanied by file and test evidence.
 
@@ -114,6 +114,6 @@ In `packages/sim/src/engine/replay.ts` (lines 44–63) and `incidents.ts`, the f
 ### Metric 6: Player Free Text Storage & Transmission
 - **Result: ZERO player free text is collected, stored, or transmitted anywhere.**
   - **Inputs:** The web UI contains zero text `<input>` or `<textarea>` elements. The only HTML inputs are numeric range sliders (crew size, packing margin) and a read-only copy-link input.
-  - **LocalStorage:** Only stores discrete enums and booleans (`"sol-keeper.language"`, `"sol-keeper.dial"`, `"sol-keeper.cockpit-mode"`, `"sol-keeper.accessibility"`, `"sol-keeper.onboarding"`, and panel layout ID arrays).
+  - **LocalStorage:** Only stores discrete enums and booleans (`"outpost-x.language"`, `"outpost-x.dial"`, `"outpost-x.cockpit-mode"`, `"outpost-x.accessibility"`, `"outpost-x.onboarding"`, and panel layout ID arrays).
   - **Network:** Zero outbound telemetry, tracking, or POST requests are made by the client. All client network traffic consists of read-only `GET` requests for static assets and local API endpoints (`/api/space-weather`, `/api/light-time`, `/api/nasa-images`).
 

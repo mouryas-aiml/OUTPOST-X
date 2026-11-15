@@ -51,12 +51,12 @@ async function runChecks(): Promise<void> {
   // --------------------------------------------------------------------------
   // Check 1: Project Name
   // --------------------------------------------------------------------------
-  const projectName = "Sol Keeper";
-  assert("Project Name", "README.md", files.readme.includes(projectName), "Contains 'Sol Keeper'");
-  assert("Project Name", "about.html", files.about.includes(projectName), "Contains 'Sol Keeper'");
-  assert("Project Name", "DATA_PASSPORT.md", files.passport.includes(projectName), "Contains 'Sol Keeper'");
-  assert("Project Name", "CREDITS.md", files.credits.includes(projectName), "Contains 'Sol Keeper'");
-  assert("Project Name", "CLAIMS_EVIDENCE.md", files.claims.includes(projectName), "Contains 'Sol Keeper'");
+  const projectName = "OUTPOST-X";
+  assert("Project Name", "README.md", files.readme.includes(projectName), "Contains 'OUTPOST-X'");
+  assert("Project Name", "about.html", files.about.includes(projectName), "Contains 'OUTPOST-X'");
+  assert("Project Name", "DATA_PASSPORT.md", files.passport.includes(projectName), "Contains 'OUTPOST-X'");
+  assert("Project Name", "CREDITS.md", files.credits.includes(projectName), "Contains 'OUTPOST-X'");
+  assert("Project Name", "CLAIMS_EVIDENCE.md", files.claims.includes(projectName), "Contains 'OUTPOST-X'");
 
   // --------------------------------------------------------------------------
   // Check 2: Core Feature Names

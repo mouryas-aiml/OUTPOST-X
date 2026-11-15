@@ -25,7 +25,7 @@ import type {
   SystemId,
   ThermalControlMode,
   WaterReclamationMode,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import type { DialLevel, Language } from "./types.js";
 
 /** Full names, used at the specialist and commander levels. */

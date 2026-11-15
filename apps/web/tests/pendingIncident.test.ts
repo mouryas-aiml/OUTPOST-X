@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createInitialState } from "@sol-keeper/sim";
+import { createInitialState } from "@outpost-x/sim";
 import { selectPendingIncident } from "../src/incidents/pendingIncident";
 
 const PARAMS = {

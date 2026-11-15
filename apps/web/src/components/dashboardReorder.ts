@@ -20,8 +20,8 @@
  * - The chosen order is saved per page in localStorage and reapplied on every mount.
  */
 
-export const LAYOUT_STORAGE_PREFIX = "sol-keeper.layout.";
-export const RESET_LAYOUT_EVENT = "sol-keeper:reset-layout";
+export const LAYOUT_STORAGE_PREFIX = "outpost-x.layout.";
+export const RESET_LAYOUT_EVENT = "outpost-x:reset-layout";
 
 /** Pure: moves one item to a new index. */
 export function moveItem<T>(items: readonly T[], from: number, to: number): T[] {

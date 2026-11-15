@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { environment, type Body } from "@sol-keeper/sim";
+import { environment, type Body } from "@outpost-x/sim";
 import { useRun } from "../store/run.js";
 
 /**

@@ -210,7 +210,7 @@ Built as a **separate `views/Report/MissionReportView.tsx`**, not a DebriefView 
 different jobs (interactive/exploratory vs. single linear printable page) and different
 lifetimes (mid-app tab vs. landing page for an inbound link with no prior run). Shared logic
 (`majorIncidents`/`groupIncidents`/`causalCascade`/`directEffects`/`logText`) stays reused
-from `dial/blackBox.ts` and `@sol-keeper/sim` directly; two new small pure helpers were added
+from `dial/blackBox.ts` and `@outpost-x/sim` directly; two new small pure helpers were added
 rather than folded into `blackBox.ts` itself, since neither is about incident-grouping or
 crew loss: `dial/decisionTimeline.ts` (station-tagging) and `dial/whatNasaDid.ts` (the NASA
 analogue cards). `DebriefView` keeps its own "Copy report link" (useful mid-mission, per

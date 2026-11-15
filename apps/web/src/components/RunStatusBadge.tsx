@@ -1,5 +1,5 @@
 import { useRun } from "../store/run.js";
-import { isCrisisScenario, type RunStatus } from "@sol-keeper/sim";
+import { isCrisisScenario, type RunStatus } from "@outpost-x/sim";
 import { assessCrisisOutcome } from "../dial/crisisThreatAssessment.js";
 
 /** Icon + word + colour class per outcome — never colour alone (brief rule 6). */

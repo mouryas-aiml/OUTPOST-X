@@ -1,5 +1,5 @@
 /**
- * @sol-keeper/sim — the pure, deterministic outpost simulation.
+ * @outpost-x/sim — the pure, deterministic outpost simulation.
  *
  * Contract: no DOM, no network, no wall clock, no `Math.random`. Give it the same `Params`
  * and you get the same final state and the same log, byte for byte.

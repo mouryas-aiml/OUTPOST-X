@@ -60,7 +60,7 @@ beforeEach(() => {
 describe("App shell, first frame (Home page with hero section is the entry point)", () => {
   it("opens on Home with the modern hero section and launch schedule", () => {
     const out = render();
-    expect(out).toContain("Sol Keeper");
+    expect(out).toContain("OUTPOST-X");
     expect(out).toContain("Launch Windows");
     expect(out).toContain("Launch Outpost");
     expect(out).not.toContain("Mission Briefing");

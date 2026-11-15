@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CONSTANTS, walkConstants, type SourceId } from "@sol-keeper/sim";
+import { CONSTANTS, walkConstants, type SourceId } from "@outpost-x/sim";
 import { DATA_PASSPORT } from "../src/data/dataPassport.js";
 import { SOURCE_REGISTRY } from "../src/data/sourceRegistry.js";
 

@@ -1,4 +1,4 @@
-import { scenarioEsmBreakdown } from "@sol-keeper/sim";
+import { scenarioEsmBreakdown } from "@outpost-x/sim";
 import { useRun } from "../store/run.js";
 import { useDial } from "../store/dial.js";
 import { systemLabel } from "../dial/labels.js";

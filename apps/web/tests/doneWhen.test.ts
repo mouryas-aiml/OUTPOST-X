@@ -15,7 +15,7 @@
  * what two independent browsers would each run.
  */
 import { describe, expect, it } from "vitest";
-import { INCIDENT_CATALOG, replayRun, runFingerprint, type RecordedInput } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, replayRun, runFingerprint, type RecordedInput } from "@outpost-x/sim";
 import {
   decodeRunLinkFragment,
   decodeRunLinkQuery,

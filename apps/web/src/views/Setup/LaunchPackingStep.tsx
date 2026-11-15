@@ -7,7 +7,7 @@ import {
   scenarioEsmBreakdown,
   sizeShielding,
   type ProjectPhase,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { useSetup, resolveScenario, buildClassLinkConfig } from "../../store/setup.js";
 import { useDial } from "../../store/dial.js";
 import { systemLabel } from "../../dial/labels.js";

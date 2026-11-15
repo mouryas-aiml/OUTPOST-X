@@ -1,4 +1,4 @@
-import { getScenario, landingSitesForBody, type Confidence, type LandingSite, type LandingSiteId } from "@sol-keeper/sim";
+import { getScenario, landingSitesForBody, type Confidence, type LandingSite, type LandingSiteId } from "@outpost-x/sim";
 import { useSetup } from "../../store/setup.js";
 import { LandingSiteMap, type MapMarker } from "../../components/LandingSiteMap.js";
 

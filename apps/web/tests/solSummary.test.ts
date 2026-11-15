@@ -5,7 +5,7 @@
  * actually records.
  */
 import { describe, expect, it } from "vitest";
-import { createInitialState, getScenario, prudentBot, runWithBot, STATION_IDS, type Params } from "@sol-keeper/sim";
+import { createInitialState, getScenario, prudentBot, runWithBot, STATION_IDS, type Params } from "@outpost-x/sim";
 import { solSummaryLines } from "../src/dial/solSummary";
 
 const params: Params = {

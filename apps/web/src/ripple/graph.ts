@@ -18,7 +18,7 @@
  * omits a system (no MOXIE on the Moon) must not show an edge for a dependency that scenario
  * does not actually have.
  */
-import type { Scenario, SystemId } from "@sol-keeper/sim";
+import type { Scenario, SystemId } from "@outpost-x/sim";
 
 export type DomainId = "oxygen" | "co2" | "water" | "food" | "thermal" | "radiation" | "crew";
 

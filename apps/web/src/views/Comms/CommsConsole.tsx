@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import type { CommsPriority } from "@sol-keeper/sim";
+import type { CommsPriority } from "@outpost-x/sim";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";
 import { useLiveOrSnapshot } from "../../data/liveOrSnapshot.js";

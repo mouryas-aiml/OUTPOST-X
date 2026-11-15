@@ -21,7 +21,7 @@ import type {
   SystemId,
   ThermalControlMode,
   WaterReclamationMode,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import {
   co2ScrubberModeLabel,
   commsPriorityLabel,

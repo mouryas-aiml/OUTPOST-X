@@ -4,7 +4,7 @@
  * comment for why "Standby" exists as a genuine fourth state, not a colour choice: before
  * the first tick, `poweredThisHour` is just its unset default, not a real result yet.
  */
-import type { SystemState } from "@sol-keeper/sim";
+import type { SystemState } from "@outpost-x/sim";
 
 export type SystemRunState = "standby" | "powered" | "shed" | "failed";
 

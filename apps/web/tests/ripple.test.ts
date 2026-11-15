@@ -5,7 +5,7 @@
  * against the four-state system status logic shared with PowerPriorities.
  */
 import { describe, expect, it } from "vitest";
-import { firstLight, jezeroOutpost, theLongNight } from "@sol-keeper/sim";
+import { firstLight, jezeroOutpost, theLongNight } from "@outpost-x/sim";
 import { buildRippleGraph } from "../src/ripple/graph";
 import { systemStatusInfo } from "../src/dial/systemStatus";
 

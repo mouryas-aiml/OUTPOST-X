@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { power } from "@sol-keeper/sim";
+import { power } from "@outpost-x/sim";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";
 import { useSpaceWeather } from "../../data/spaceWeather.js";

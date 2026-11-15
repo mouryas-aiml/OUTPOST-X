@@ -10,7 +10,7 @@
  * a state mutation made after `reset()`, so anything that needs a real mutation reflected has
  * to be testable without going through a component render at all.
  */
-import type { Scenario, SimState } from "@sol-keeper/sim";
+import type { Scenario, SimState } from "@outpost-x/sim";
 
 export interface HabitatEffects {
   /** 0-1: fraction of the scenario's own rated solar array area permanently lost to a sealed

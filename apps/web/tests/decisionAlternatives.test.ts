@@ -5,7 +5,7 @@
  * with what the engine actually recorded and actually declared as available responses.
  */
 import { describe, expect, it } from "vitest";
-import { createInitialState, getScenario, INCIDENT_CATALOG, prudentBot, runWithBot, type Params } from "@sol-keeper/sim";
+import { createInitialState, getScenario, INCIDENT_CATALOG, prudentBot, runWithBot, type Params } from "@outpost-x/sim";
 import { decisionAlternatives } from "../src/dial/decisionAlternatives";
 
 const params: Params = {

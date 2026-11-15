@@ -5,7 +5,7 @@
  * (packages/sim/src/engine/incidents.ts) and `SOURCE_REGISTRY` (apps/web/src/data/
  * sourceRegistry.ts), which every constant's own citation already goes through.
  */
-import { INCIDENT_CATALOG, type SimState } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, type SimState } from "@outpost-x/sim";
 import { SOURCE_REGISTRY } from "../data/sourceRegistry.js";
 
 export interface WhatNasaDidCard {

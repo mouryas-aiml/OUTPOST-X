@@ -4,7 +4,7 @@
  * for incidents that actually triggered this run.
  */
 import { describe, expect, it } from "vitest";
-import { INCIDENT_CATALOG, type ActiveIncident } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, type ActiveIncident } from "@outpost-x/sim";
 import { whatNasaDidCards } from "../src/dial/whatNasaDid.js";
 import { SOURCE_REGISTRY } from "../src/data/sourceRegistry.js";
 

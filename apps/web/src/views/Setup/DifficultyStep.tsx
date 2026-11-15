@@ -1,4 +1,4 @@
-import type { MissionDifficulty } from "@sol-keeper/sim";
+import type { MissionDifficulty } from "@outpost-x/sim";
 import { useSetup } from "../../store/setup.js";
 
 // Real copy, not marketing text: every difficulty is scenario parameters only, never physics

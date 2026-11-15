@@ -1,4 +1,4 @@
-# Sol Keeper — architecture (M0)
+# OUTPOST-X — architecture (M0)
 
 The design agreed at M0, before any simulation code exists. Rules referenced by number are
 the seven in `CLAUDE.md` / `docs/PROJECT_BRIEF.md`.
@@ -13,7 +13,7 @@ the seven in `CLAUDE.md` / `docs/PROJECT_BRIEF.md`.
   eslint.config.js                 flat config, including the sim purity rules (§4)
   .prettierrc, .gitignore, .env.example, CLAUDE.md, vitest.workspace.ts
 
-  packages/sim/                    @sol-keeper/sim — pure TS
+  packages/sim/                    @outpost-x/sim — pure TS
     package.json                   exports ./dist/index.js, types ./dist/index.d.ts
     tsconfig.json, tsconfig.build.json
     src/
@@ -38,7 +38,7 @@ the seven in `CLAUDE.md` / `docs/PROJECT_BRIEF.md`.
       validation/*.test.ts         the brief's must-pass tests (§7)
 
   apps/web/
-    package.json                   depends on @sol-keeper/sim: workspace:*
+    package.json                   depends on @outpost-x/sim: workspace:*
     vercel.json, vite.config.ts
     api/health.ts                                    M2
     api/{space-weather,light-time,nasa-images}.ts    M5
@@ -267,8 +267,8 @@ value may never be attributed to NASA.
 
 - **Root Directory = `apps/web`**, Framework preset = Vite.
 - `packages/sim` is consumed as a **built workspace package**, not a Vite source alias.
-  `apps/web` depends on `"@sol-keeper/sim": "workspace:*"` and builds with
-  `pnpm --filter @sol-keeper/sim build && vite build`. A source alias would serve the
+  `apps/web` depends on `"@outpost-x/sim": "workspace:*"` and builds with
+  `pnpm --filter @outpost-x/sim build && vite build`. A source alias would serve the
   browser bundle but not the `api/` functions, which Vercel's Node builder resolves through
   `node_modules` — so the package needs real `dist` output plus `exports`/`types` entries.
   One mechanism covers both targets.
@@ -309,7 +309,7 @@ keeping, because each cost time to establish:
   `build-a-junior-astronaut-mission-trainer` in the dashboard with `NASA_API_KEY` set (for
   Production and Preview — **not Development**, which the brief also calls for), so
   `apps/web/.vercel` was relinked there rather than to the project this milestone created
-  in error. That stray project (`sol-keeper`) and a second stray
+  in error. That stray project (`outpost-x`) and a second stray
   (`build-a-junior-astronaut-mission-trainer-naae`, already deployed once under "Other"
   framework preset) are both still on the account, unresolved — see the milestone summary.
 - **A Playwright screenshot caught a bug no Vitest render test saw**: the power priority
@@ -406,7 +406,7 @@ is walked live (`walkConstants(CONSTANTS)`), so the source list, per-source cons
 and the placeholder disclosure can never say something the sim no longer agrees with.
 `sourceRegistry.ts` is a hand-kept manifest of titles and URLs (the sim has no reason to know
 what a citation looks like), typed as `Record<SourceId, SourceInfo>` — a missing or
-misspelled entry is a `tsc` error the moment `@sol-keeper/sim` adds a `SourceId`, so no
+misspelled entry is a `tsc` error the moment `@outpost-x/sim` adds a `SourceId`, so no
 runtime coverage test is needed for it, unlike the sim-side markdown check in
 `validation/constants.test.ts`.
 
@@ -565,7 +565,7 @@ result's metadata under `item.data[0]`, with the thumbnail wherever `links[].rel
 sample to check against — `server-lib/{donki,horizons,images}.test.ts` load the actual
 files from `docs/api-samples/` and assert the parsed shape, not a mock.
 
-`server-lib/horizons.ts` reuses `@sol-keeper/sim`'s own `units.auToKm`/`auToLightSeconds`
+`server-lib/horizons.ts` reuses `@outpost-x/sim`'s own `units.auToKm`/`auToLightSeconds`
 rather than re-declaring the AU-to-km and light-speed constants — the same numbers `/api/health`
 already proved resolve inside a Vercel Function, now doing double duty. `server-lib/validate.ts`
 whitelists every query parameter per the brief ("`/api` functions are not open proxies"):

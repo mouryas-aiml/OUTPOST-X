@@ -39,7 +39,7 @@ export function DataPassportView({ onClose }: DataPassportViewProps) {
           <div>
             <h2>Data Passport</h2>
             <p className="view-hint">
-              Every scientific number, baseline constant, and active data pipeline in Sol Keeper.
+              Every scientific number, baseline constant, and active data pipeline in OUTPOST-X.
               Cataloged with source pedigree, gameplay impact, human evidence level, and verification status.
             </p>
           </div>

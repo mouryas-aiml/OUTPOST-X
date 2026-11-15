@@ -5,12 +5,12 @@
  * move the pass-rate distribution — a new incident, a retuned constant, a rebalanced bot.
  *
  * Usage:
- *   pnpm --filter @sol-keeper/sim run build   # this script runs against the built package
+ *   pnpm --filter @outpost-x/sim run build   # this script runs against the built package
  *   node scripts/generate-balance-doc.ts
  */
 import { writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-// A relative import to the built package, not the bare "@sol-keeper/sim" specifier: the
+// A relative import to the built package, not the bare "@outpost-x/sim" specifier: the
 // package is only declared as a dependency of apps/web (workspace:*), and Node's ESM
 // resolution for a bare specifier walks up from *this file's* location, not from the
 // working directory a script happens to be run from — scripts/ itself has no node_modules

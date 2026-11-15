@@ -6,7 +6,7 @@
  * assertions that have nothing to do with onboarding.
  *
  * This re-exports Playwright's own `test`/`expect` with one autouse fixture: seed
- * `sol-keeper.onboarding` as already-seen before the page's own scripts run, using the same
+ * `outpost-x.onboarding` as already-seen before the page's own scripts run, using the same
  * wire format zustand's `persist` middleware writes (`{state, version}` — see
  * apps/web/src/store/onboarding.ts). Specs that need the *unseen* tutorial itself
  * (e2e/onboarding.spec.ts) import directly from `@playwright/test` instead, deliberately
@@ -17,7 +17,7 @@ import { test as base, expect, type Page } from "@playwright/test";
 export const test = base.extend({
   page: async ({ page }, use) => {
     await page.addInitScript(() => {
-      localStorage.setItem("sol-keeper.onboarding", JSON.stringify({ state: { seen: true, step: 0 }, version: 0 }));
+      localStorage.setItem("outpost-x.onboarding", JSON.stringify({ state: { seen: true, step: 0 }, version: 0 }));
     });
     await use(page);
   },

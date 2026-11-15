@@ -60,7 +60,7 @@ export const useOnboarding = create<OnboardingStore>()(
       },
     }),
     {
-      name: "sol-keeper.onboarding",
+      name: "outpost-x.onboarding",
       storage: createJSONStorage(() => safeLocalStorage),
     },
   ),

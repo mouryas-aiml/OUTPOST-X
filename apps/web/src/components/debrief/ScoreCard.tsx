@@ -25,7 +25,7 @@ import {
   type BotBaselines,
   type ScoreComponentId,
   type ScoreEvent,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";
 import { useAppLanguage } from "../../i18n/useAppLanguage.js";

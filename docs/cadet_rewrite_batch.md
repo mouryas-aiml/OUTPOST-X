@@ -1,6 +1,6 @@
 # Cadet Rewrite Batch Export
 
-This document catalogs every string in the Sol Keeper interface requiring Cadet-depth simplification to $\le$ **Grade 5.0** under the Flesch–Kincaid Readability metric, grouped into four sections as specified in Phase 3 verification and statement audit targets.
+This document catalogs every string in the OUTPOST-X interface requiring Cadet-depth simplification to $\le$ **Grade 5.0** under the Flesch–Kincaid Readability metric, grouped into four sections as specified in Phase 3 verification and statement audit targets.
 
 Flesch–Kincaid Grade Level formula:
 $$\text{Grade} = 0.39 \left(\frac{\text{words}}{\text{sentences}}\right) + 11.8 \left(\frac{\text{syllables}}{\text{words}}\right) - 15.59$$

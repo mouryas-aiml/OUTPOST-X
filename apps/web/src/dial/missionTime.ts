@@ -7,7 +7,7 @@
  * word. This is the one place that word is chosen, from `scenario.body`, so nothing else in
  * the app has to make that call itself.
  */
-import { units, type Body } from "@sol-keeper/sim";
+import { units, type Body } from "@outpost-x/sim";
 import type { DialLevel } from "./types.js";
 
 /** "Sol" or "Day" — the word itself, for composing a range like "Sol 8.11–12.04". Cadet depth always says "Day". */

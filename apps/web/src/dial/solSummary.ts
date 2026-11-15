@@ -4,7 +4,7 @@
  * recorded as the direct cause of at least one other) rather than a second, new heuristic for
  * "what mattered" — the same discipline the Debrief already follows.
  */
-import { INCIDENT_CATALOG, SYSTEM_TO_STATION, type LogEntry, type StationId } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, SYSTEM_TO_STATION, type LogEntry, type StationId } from "@outpost-x/sim";
 import { majorIncidents } from "./blackBox.js";
 
 const SEVERITY_RANK: Record<string, number> = { critical: 3, warning: 2, caution: 2, info: 1 };

@@ -1,4 +1,4 @@
-import { getScenario, type ScenarioId } from "@sol-keeper/sim";
+import { getScenario, type ScenarioId } from "@outpost-x/sim";
 import { useRun } from "../store/run.js";
 import { SCENARIO_LABELS } from "../dial/scenarioLabels.js";
 

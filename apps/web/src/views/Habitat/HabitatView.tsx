@@ -10,7 +10,7 @@ import {
   type StationId,
   type SystemId,
   type SystemState,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";
 import { Starfield } from "../../components/Starfield.js";

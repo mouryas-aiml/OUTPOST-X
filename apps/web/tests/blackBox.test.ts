@@ -4,7 +4,7 @@
  * synthetic entry could hide a mismatch with what the engine actually records.
  */
 import { describe, expect, it } from "vitest";
-import { createInitialState, getScenario, prudentBot, runWithBot, type Params } from "@sol-keeper/sim";
+import { createInitialState, getScenario, prudentBot, runWithBot, type Params } from "@outpost-x/sim";
 import { crewLossConditions, groupIncidents, majorIncidents } from "../src/dial/blackBox";
 
 const params: Params = {

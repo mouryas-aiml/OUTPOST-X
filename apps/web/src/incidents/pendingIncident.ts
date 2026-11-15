@@ -12,7 +12,7 @@
  * `detectedAtHour` order, since the incident that has been running longest is the one most in
  * need of an answer.
  */
-import { INCIDENT_CATALOG, type ActiveIncident, type IncidentDefinition, type SimState } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, type ActiveIncident, type IncidentDefinition, type SimState } from "@outpost-x/sim";
 
 export interface PendingIncident {
   readonly incident: ActiveIncident;

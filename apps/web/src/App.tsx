@@ -1,6 +1,19 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FiAlertTriangle, FiMenu, FiRotateCcw, FiX } from "react-icons/fi";
+import {
+  FiActivity,
+  FiAlertOctagon,
+  FiAlertTriangle,
+  FiCheckSquare,
+  FiCompass,
+  FiFileText,
+  FiHome,
+  FiMenu,
+  FiRadio,
+  FiRotateCcw,
+  FiX,
+  FiZap,
+} from "react-icons/fi";
 import { clearAllLayouts } from "./components/dashboardReorder.js";
 import { useRun } from "./store/run.js";
 import { useSetup } from "./store/setup.js";
@@ -42,6 +55,7 @@ import { RoverChatWidget } from "./components/RoverChatWidget.js";
 import { applyRunLinkFromLocation, type BootRunLinkResult } from "./share/bootRunLink.js";
 import { DebugOverlay } from "./components/DebugOverlay.js";
 import { BrandMark } from "./components/BrandMark.js";
+import { AppFooter } from "./components/AppFooter.js";
 import { PlaytestBanner } from "./components/PlaytestBanner.js";
 import { recordRetry } from "./store/playtest.js";
 import { useAppLanguage } from "./i18n/useAppLanguage.js";
@@ -113,6 +127,18 @@ const TAB_KEYS: Record<TabView, string> = {
   crisis: "tabs.crisis",
   briefing: "tabs.briefing",
   debrief: "tabs.debrief",
+};
+
+const TAB_ICONS: Record<TabView, React.ReactNode> = {
+  power: <FiZap className="tab-icon" aria-hidden="true" />,
+  lifeSupport: <FiActivity className="tab-icon" aria-hidden="true" />,
+  comms: <FiRadio className="tab-icon" aria-hidden="true" />,
+  incidentCommand: <FiAlertTriangle className="tab-icon" aria-hidden="true" />,
+  missionCommand: <FiCompass className="tab-icon" aria-hidden="true" />,
+  habitat: <FiHome className="tab-icon" aria-hidden="true" />,
+  crisis: <FiAlertOctagon className="tab-icon" aria-hidden="true" />,
+  briefing: <FiFileText className="tab-icon" aria-hidden="true" />,
+  debrief: <FiCheckSquare className="tab-icon" aria-hidden="true" />,
 };
 
 /**
@@ -317,8 +343,8 @@ function AppShell({ initialView = "home" }: AppProps) {
       const custom = e as CustomEvent<View>;
       if (custom.detail) setView(custom.detail);
     }
-    window.addEventListener("sol-keeper:navigate", handleNavigate);
-    return () => window.removeEventListener("sol-keeper:navigate", handleNavigate);
+    window.addEventListener("outpost-x:navigate", handleNavigate);
+    return () => window.removeEventListener("outpost-x:navigate", handleNavigate);
   }, []);
 
   // M10.6: read once, at boot — a run link is a landing-page concern, not something to
@@ -396,22 +422,26 @@ function AppShell({ initialView = "home" }: AppProps) {
                 key={id}
                 id={`tab-${id}`}
                 type="button"
-                className={`tab-button ${view === id ? "tab-button-active" : ""}`}
+                className={`tab-button tab-btn ${view === id ? "tab-button-active tab-btn-active" : ""}`}
                 aria-current={view === id ? "page" : undefined}
+                aria-selected={view === id}
                 onClick={() => {
                   setView(id);
                   setMobileNavOpen(false);
                 }}
               >
-                {playMode === "junior" && id === "missionCommand"
-                  ? language === "bn"
-                    ? "🚀 ককপিট"
-                    : "🚀 Cockpit"
-                  : playMode === "junior" && id === "habitat"
+                {playMode !== "junior" && TAB_ICONS[id]}
+                <span className="tab-label">
+                  {playMode === "junior" && id === "missionCommand"
                     ? language === "bn"
-                      ? "🏠 হ্যাবিট্যাট ৩ডি"
-                      : "🏠 Habitat 3D"
-                    : t(TAB_KEYS[id])}
+                      ? "🚀 ককপিট"
+                      : "🚀 Cockpit"
+                    : playMode === "junior" && id === "habitat"
+                      ? language === "bn"
+                        ? "🏠 হ্যাবিট্যাট ৩ডি"
+                        : "🏠 Habitat 3D"
+                      : t(TAB_KEYS[id])}
+                </span>
                 {id === "debrief" && status !== "running" && (
                   <span className="tab-badge" aria-label={t("tabs.debriefReady")}>
                     ●
@@ -564,16 +594,22 @@ function AppShell({ initialView = "home" }: AppProps) {
               <JuniorCockpit onOpenMenu={() => setMobileNavOpen(true)} />
             ) : (
               <>
-                <header className="mission-head" key={version}>
-                  <div>
-                    <h1>Sol Keeper</h1>
-                    <p className="mission-site">
-                      {scenario.site.name} · {scenario.body === "mars" ? "Mars" : "Moon"} ·{" "}
-                      {durationLabel(scenario.durationHours, scenario.body)} · {livingCrew}/
-                      {crew.length} crew
+                <header className="mission-head hud app-header" key={version}>
+                  <div className="hud-brand-meta">
+                    <h1 className="hud-title">OUTPOST-X</h1>
+                    <p className="mission-site hud-site-badge">
+                      <span className="hud-site-name">{scenario.site.name}</span>
+                      <span className="hud-divider"> · </span>
+                      <span className="hud-body-tag">{scenario.body === "mars" ? "Mars" : "Moon"}</span>
+                      <span className="hud-divider"> · </span>
+                      <span className="hud-duration">{durationLabel(scenario.durationHours, scenario.body)}</span>
+                      <span className="hud-divider"> · </span>
+                      <span className="hud-crew-count">{livingCrew}/{crew.length} crew</span>
                     </p>
                   </div>
-                  <RunStatusBadge />
+                  <div className="hud-status-wrapper">
+                    <RunStatusBadge />
+                  </div>
                 </header>
 
                 {playMode !== "junior" && <DialSwitch />}
@@ -649,41 +685,11 @@ function AppShell({ initialView = "home" }: AppProps) {
 
             {level === "cadet" && <RoverChatWidget currentView={view} />}
 
-            <footer className="credits">
-              <p>
-                Every number in this simulation comes from published NASA data. See Data Sources
-                (above) for the full list and what is tuned for gameplay.
-              </p>
-              <p className="credits-fine">
-                Not affiliated with or endorsed by NASA. Data credited to NASA and the cited
-                researchers.{" "}
-                <a
-                  href="/about.html"
-                  style={{
-                    display: "inline",
-                    padding: "0 0.25rem",
-                    textDecoration: "underline",
-                    color: "inherit",
-                  }}
-                >
-                  About
-                </a>
-                {" · "}
-                <button
-                  type="button"
-                  className="btn btn-quiet"
-                  style={{
-                    display: "inline",
-                    padding: "0 0.25rem",
-                    textDecoration: "underline",
-                    fontSize: "inherit",
-                  }}
-                  onClick={() => setCreditsOpen(true)}
-                >
-                  Credits &amp; Licenses
-                </button>
-              </p>
-            </footer>
+            <AppFooter
+              onOpenCredits={() => setCreditsOpen(true)}
+              onOpenDataPassport={() => setDataPassportOpen(true)}
+              onOpenDataSources={() => setDataSourcesOpen(true)}
+            />
           </div>
         </div>
       )}

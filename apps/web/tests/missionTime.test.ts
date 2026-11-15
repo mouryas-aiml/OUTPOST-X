@@ -4,7 +4,7 @@
  * the word and the conversion both follow `body`, not a hardcoded assumption.
  */
 import { describe, expect, it } from "vitest";
-import { environment, units } from "@sol-keeper/sim";
+import { environment, units } from "@outpost-x/sim";
 import { durationLabel, elapsedValue, timeUnitWord, timestampLabel } from "../src/dial/missionTime";
 
 describe("missionTime", () => {

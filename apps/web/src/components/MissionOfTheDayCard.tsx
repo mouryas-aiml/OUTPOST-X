@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiCalendar, FiSun, FiArrowRight, FiClock } from "react-icons/fi";
-import { SCENARIOS, type StandardScenarioId } from "@sol-keeper/sim";
+import { SCENARIOS, type StandardScenarioId } from "@outpost-x/sim";
 import { useRun } from "../store/run.js";
 import { SCENARIO_LABELS } from "../dial/scenarioLabels.js";
 import { durationLabel } from "../dial/missionTime.js";

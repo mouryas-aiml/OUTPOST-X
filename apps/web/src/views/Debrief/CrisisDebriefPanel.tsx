@@ -1,5 +1,5 @@
 import { FiBookOpen, FiExternalLink, FiCheckCircle, FiAlertTriangle, FiAward } from "react-icons/fi";
-import { type CrisisScenario, isCrisisScenario, type SimState, type Scenario } from "@sol-keeper/sim";
+import { type CrisisScenario, isCrisisScenario, type SimState, type Scenario } from "@outpost-x/sim";
 import "./CrisisDebriefPanel.css";
 
 export interface CrisisDebriefPanelProps {

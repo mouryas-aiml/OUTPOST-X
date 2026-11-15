@@ -16,7 +16,7 @@ import {
   type SurvivalMode,
   type ThermalControlMode,
   type WaterReclamationMode,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";
 import { Gauge } from "../../components/Gauge.js";

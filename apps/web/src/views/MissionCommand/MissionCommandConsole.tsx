@@ -13,7 +13,7 @@ import {
   type ResearchTaskId,
   type StationId,
   type TickContext,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { FiCalendar, FiUsers, FiAlertTriangle, FiClock } from "react-icons/fi";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";

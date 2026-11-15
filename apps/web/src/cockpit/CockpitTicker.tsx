@@ -1,6 +1,6 @@
 import { useRun } from "../store/run.js";
 import { timestampLabel } from "../dial/missionTime.js";
-import { isCrisisScenario } from "@sol-keeper/sim";
+import { isCrisisScenario } from "@outpost-x/sim";
 
 /**
  * M9.1's own rule for `ticker` regions: "one-line readouts only (mission elapsed time, sol

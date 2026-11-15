@@ -2,13 +2,14 @@ import { ReactLenis } from "lenis/react";
 import { motion, useInView, useMotionTemplate, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { FiArrowRight, FiBookOpen, FiChevronRight, FiClock, FiMapPin, FiWind, FiZap } from "react-icons/fi";
 import { useEffect, useRef, useState } from "react";
-import { SCENARIOS, type ScenarioId, type StandardScenarioId } from "@sol-keeper/sim";
+import { SCENARIOS, type ScenarioId, type StandardScenarioId } from "@outpost-x/sim";
 import { useAccessibility } from "../../store/accessibility.js";
 import { useDial } from "../../store/dial.js";
 import { SCENARIO_LABELS } from "../../dial/scenarioLabels.js";
 import { CONTROLS_REFERENCE, SETUP_CONTROLS_REFERENCE, getMissionGuide } from "../../dial/missionGuides.js";
 import { durationLabel } from "../../dial/missionTime.js";
 import { MissionOfTheDayCard } from "../MissionOfTheDayCard.js";
+import { AppFooter } from "../AppFooter.js";
 import "./modern-hero.css";
 
 export interface SmoothScrollHeroProps {
@@ -37,54 +38,7 @@ export const SmoothScrollHero = ({
             <MissionOfTheDayCard onLaunch={onLaunchMissionOfTheDay} />
           </section>
         )}
-        <footer
-          className="modern-hero-footer"
-          style={{
-            textAlign: "center",
-            padding: "2.5rem 1rem 4rem",
-            color: "rgba(255, 255, 255, 0.45)",
-            fontSize: "0.82rem",
-            position: "relative",
-            zIndex: 10,
-          }}
-        >
-          <p style={{ margin: "0 0 0.5rem 0" }}>
-            Every number in this simulation comes from published NASA data. Not affiliated with or endorsed by NASA.
-          </p>
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "0.75rem" }}>
-            <a
-              href="/about.html"
-              style={{
-                fontSize: "0.82rem",
-                color: "#60a5fa",
-                textDecoration: "underline",
-              }}
-            >
-              About
-            </a>
-            {onOpenCredits && (
-              <>
-                <span>·</span>
-                <button
-                  type="button"
-                  className="btn btn-quiet"
-                  style={{
-                    fontSize: "0.82rem",
-                    color: "#60a5fa",
-                    textDecoration: "underline",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    padding: 0,
-                  }}
-                  onClick={onOpenCredits}
-                >
-                  Credits &amp; Licenses
-                </button>
-              </>
-            )}
-          </div>
-        </footer>
+        <AppFooter onOpenCredits={onOpenCredits} className="modern-hero-app-footer" />
       </ReactLenis>
     </div>
   );
@@ -102,13 +56,7 @@ const Nav = ({
   return (
     <nav className="modern-hero-nav" aria-label="Main Navigation">
       <div className="modern-hero-brand">
-        <span className="modern-hero-title">Sol Keeper</span>
-        <span className="modern-hero-by">by</span>
-        <img
-          src="/images/projonmo-apollo.png"
-          alt="Projonmo Apollo - From CUET"
-          className="modern-hero-team-logo"
-        />
+        <img src="/branding/outpost-x-logo.svg" alt="OUTPOST-X" className="modern-hero-logo" />
       </div>
       <div className="modern-hero-nav-actions">
         {onOpenCredits && (
@@ -235,11 +183,10 @@ const HeroHeadline = () => {
 
   return (
     <motion.div className="modern-hero-headline" style={{ opacity, y }}>
-      <p className="modern-hero-headline-eyebrow">Junior Astronaut Mission Trainer</p>
-      <h1 className="modern-hero-headline-title">Run an outpost beyond Earth on real NASA numbers.</h1>
+      <p className="modern-hero-headline-eyebrow">OUTPOST-X · MISSION CONTROL</p>
+      <h1 className="modern-hero-headline-title">Take Command. Build Beyond Earth. Shape Humanity’s Next Frontier.</h1>
       <p className="modern-hero-headline-sub">
-        Three real missions. One dust storm, one 354-hour night, one reactor that has to last
-        three of them.
+        Planetary habitat simulation grounded in authentic NASA telemetry, life-support engineering, and deep-space survival constraints.
       </p>
       <div className="modern-hero-headline-missions">
         <span>Jezero Outpost</span>
@@ -606,7 +553,7 @@ const Schedule = ({ onLaunchMission }: ScheduleProps) => {
               Launch Windows
             </motion.h2>
             <p className="modern-hero-schedule-subtitle">
-              Sol Keeper's real training missions and historical crisis replays — pick one to jump straight into Setup
+              OUTPOST-X's real training missions and historical crisis replays — pick one to jump straight into Setup
               with it already selected.
             </p>
           </div>

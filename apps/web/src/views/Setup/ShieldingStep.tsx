@@ -1,4 +1,4 @@
-import { getScenario, sizeShielding, type ShieldingApproach } from "@sol-keeper/sim";
+import { getScenario, sizeShielding, type ShieldingApproach } from "@outpost-x/sim";
 import { useSetup } from "../../store/setup.js";
 
 const APPROACHES: readonly { id: ShieldingApproach; label: string; hint: string }[] = [

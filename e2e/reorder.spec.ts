@@ -58,7 +58,7 @@ test.describe("Dashboard drag-to-reorder", () => {
     const after = await headingOrder(page);
     expect(after).not.toEqual(before);
     expect(after.indexOf(moving)).toBeLessThan(before.indexOf(moving));
-    expect(await page.evaluate(() => window.localStorage.getItem("sol-keeper.layout.habitat"))).not.toBeNull();
+    expect(await page.evaluate(() => window.localStorage.getItem("outpost-x.layout.habitat"))).not.toBeNull();
 
     await reloadApp(page);
     await openTab(page, "Habitat");
@@ -72,7 +72,7 @@ test.describe("Dashboard drag-to-reorder", () => {
     const at = await centre(page, before[0] as string);
     await page.mouse.click(at.x, at.y);
     expect(await headingOrder(page)).toEqual(before);
-    expect(await page.evaluate(() => window.localStorage.getItem("sol-keeper.layout.habitat"))).toBeNull();
+    expect(await page.evaluate(() => window.localStorage.getItem("outpost-x.layout.habitat"))).toBeNull();
   });
 
   test("Alt+arrow on a focused heading moves the panel, and Reset layout restores the default", async ({ page }) => {
@@ -89,7 +89,7 @@ test.describe("Dashboard drag-to-reorder", () => {
 
     await page.getByRole("button", { name: "Reset layout" }).click();
     expect(await headingOrder(page)).toEqual(before);
-    expect(await page.evaluate(() => window.localStorage.getItem("sol-keeper.layout.habitat"))).toBeNull();
+    expect(await page.evaluate(() => window.localStorage.getItem("outpost-x.layout.habitat"))).toBeNull();
   });
 
   test("Alt+arrow at the edge of the sequence is a no-op, not a wrap-around", async ({ page }) => {

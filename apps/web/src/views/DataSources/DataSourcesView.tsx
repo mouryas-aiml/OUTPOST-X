@@ -1,4 +1,4 @@
-import { CONSTANTS, SOURCE_IDS, walkConstants, type Confidence, type SourceId } from "@sol-keeper/sim";
+import { CONSTANTS, SOURCE_IDS, walkConstants, type Confidence, type SourceId } from "@outpost-x/sim";
 import { SOURCE_REGISTRY } from "../../data/sourceRegistry.js";
 import sourceVerification from "../../data/sourceVerification.generated.json" with { type: "json" };
 
@@ -77,7 +77,7 @@ export function DataSourcesView() {
       <header className="view-head">
         <h2>Data Sources</h2>
         <p className="view-hint">
-          Every number in Sol Keeper cites one of the sources below. This page is generated
+          Every number in OUTPOST-X cites one of the sources below. This page is generated
           from the same constants file the simulation runs on — it cannot drift from what the
           game actually uses.
         </p>
@@ -88,7 +88,7 @@ export function DataSourcesView() {
         <p className="credit-line">
           Not affiliated with or endorsed by NASA. Data credited to NASA, the NASA Ames
           Research Center, Goddard Space Flight Center, MIT, UC Berkeley, and the cited
-          independent researchers. Sol Keeper is a Space Apps Challenge project and carries
+          independent researchers. OUTPOST-X is a Space Apps Challenge project and carries
           no NASA logo, insignia, or "meatball".
         </p>
       </section>

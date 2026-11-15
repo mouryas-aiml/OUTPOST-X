@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAccessibility } from "../store/accessibility.js";
 
-const STORAGE_KEY = "sol-keeper.cockpitView";
+const STORAGE_KEY = "outpost-x.cockpitView";
 /** M9.1's own responsive rule: "< 1024px: Classic view ... Do not attempt the cockpit on
  *  phones." 1024–1279px still gets cockpit, just with ticker/low-priority regions dropped
  *  (StationCockpit.tsx's own minPanelWidthPx filtering handles that half). */

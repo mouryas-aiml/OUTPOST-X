@@ -5,7 +5,7 @@
  * erases, so no server code can ever reach the browser bundle — the thing that would leak
  * NASA_API_KEY handling into client JavaScript.
  */
-import type { LogEntry, MissionScore, Scenario } from "@sol-keeper/sim";
+import type { LogEntry, MissionScore, Scenario } from "@outpost-x/sim";
 
 export type Provenance = "live" | "snapshot";
 
@@ -18,8 +18,8 @@ export interface Sourced {
 
 export interface HealthResponse extends Sourced {
   readonly status: "ok";
-  readonly service: "sol-keeper";
-  /** Proof that the @sol-keeper/sim workspace package resolved inside the function. */
+  readonly service: "outpost-x";
+  /** Proof that the @outpost-x/sim workspace package resolved inside the function. */
   readonly sim: {
     readonly resolved: true;
     readonly constantCount: number;

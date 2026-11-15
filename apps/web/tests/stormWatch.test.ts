@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createInitialState, getScenario, tick, type Scenario } from "@sol-keeper/sim";
+import { createInitialState, getScenario, tick, type Scenario } from "@outpost-x/sim";
 import { SCENARIO_LABELS } from "../src/dial/scenarioLabels.js";
 import enLocales from "../src/i18n/locales/en.json" with { type: "json" };
 

@@ -1,4 +1,4 @@
-import { environment, getScenario, physics } from "@sol-keeper/sim";
+import { environment, getScenario, physics } from "@outpost-x/sim";
 
 export type BigIdeaKey = "firstLight" | "stormWarning" | "greenThumb" | "helloEarth";
 

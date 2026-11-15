@@ -5,7 +5,7 @@
  * `tickOnce()` stops exactly at `throughHour` or a mission ending early, whichever comes first.
  */
 import { beforeEach, describe, expect, it } from "vitest";
-import { INCIDENT_CATALOG, type RecordedInput } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, type RecordedInput } from "@outpost-x/sim";
 import { useRun } from "../src/store/run.js";
 import { useReplay } from "../src/store/replay.js";
 

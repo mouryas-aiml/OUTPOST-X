@@ -4,7 +4,7 @@ import {
   crisisApollo13Co2,
   crisisSpe1972,
   crisisMirFire,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { assessCrisisOutcome } from "../src/dial/crisisThreatAssessment.js";
 
 describe("crisisThreatAssessment", () => {

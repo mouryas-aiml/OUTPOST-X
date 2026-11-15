@@ -5,7 +5,7 @@
  * wizard `commit()`, and every `reset()` caller that predates it and so passes none of its own.
  */
 import { beforeEach, describe, expect, it } from "vitest";
-import { landingSitesForBody } from "@sol-keeper/sim";
+import { landingSitesForBody } from "@outpost-x/sim";
 import { useRun, runLinkConfigFromStore } from "../src/store/run.js";
 import { useSetup, resolveScenario, buildClassLinkConfig } from "../src/store/setup.js";
 

@@ -1,4 +1,4 @@
-# Cadet Rewrites — Sol Keeper Phase 3 (A3, A4)
+# Cadet Rewrites — OUTPOST-X Phase 3 (A3, A4)
 Target: Flesch–Kincaid grade 5 or lower. Sentences are about 10 words or fewer, in active voice, with one idea each.
 How to use: these are NEW Cadet-depth strings. Specialist and Commander text stays as it is, except where Section 5 says a Specialist string is wrong.
 Keys and {placeholders} are unchanged. Nothing here has been run through the readability script; Claude Code must score every string and report any still above grade 5.

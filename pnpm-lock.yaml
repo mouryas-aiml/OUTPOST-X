@@ -44,7 +44,7 @@ importers:
 
   apps/web:
     dependencies:
-      '@sol-keeper/sim':
+      '@outpost-x/sim':
         specifier: workspace:*
         version: link:../../packages/sim
       d3-force:

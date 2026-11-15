@@ -6,7 +6,7 @@
  * until a "made with an older version" banner starts showing up on links that should work.
  */
 import { describe, expect, it } from "vitest";
-import { INCIDENT_CATALOG, SIM_VERSION, type RecordedInput } from "@sol-keeper/sim";
+import { INCIDENT_CATALOG, SIM_VERSION, type RecordedInput } from "@outpost-x/sim";
 import {
   buildRunLinkUrl,
   decodeRunLinkFragment,
@@ -211,11 +211,11 @@ describe("M10.5: frozen-literal regression", () => {
 });
 
 describe("M10.7: buildRunLinkUrl", () => {
-  const location = { origin: "https://sol-keeper.example", pathname: "/" };
+  const location = { origin: "https://outpost-x.example", pathname: "/" };
 
   it("a config-only link has a query string and no fragment", () => {
     const url = buildRunLinkUrl(location, JEZERO_CONFIG);
-    expect(url).toBe(`https://sol-keeper.example/?${encodeRunLinkQuery(JEZERO_CONFIG)}`);
+    expect(url).toBe(`https://outpost-x.example/?${encodeRunLinkQuery(JEZERO_CONFIG)}`);
     expect(url).not.toContain("#");
 
     // Round-trips through decode: this is exactly the URL shape App.tsx's boot effect reads.
@@ -228,7 +228,7 @@ describe("M10.7: buildRunLinkUrl", () => {
     const inputLog: RecordedInput[] = [{ hour: 3, input: { kind: "commsPriority", priority: "science" } }];
     const url = buildRunLinkUrl(location, JEZERO_CONFIG, { inputLog, throughHour: 10 });
     const [beforeHash, afterHash] = url.split("#");
-    expect(beforeHash).toBe(`https://sol-keeper.example/?${encodeRunLinkQuery(JEZERO_CONFIG)}`);
+    expect(beforeHash).toBe(`https://outpost-x.example/?${encodeRunLinkQuery(JEZERO_CONFIG)}`);
     expect(afterHash).toBe(`i=${encodeRunLinkFragment(inputLog, 10)}`);
 
     const decodedFragment = decodeRunLinkFragment(afterHash ?? "");
@@ -236,7 +236,7 @@ describe("M10.7: buildRunLinkUrl", () => {
   });
 
   it("respects a non-root pathname (a deployed subpath, not just the origin's root)", () => {
-    const url = buildRunLinkUrl({ origin: "https://example.com", pathname: "/sol-keeper/" }, JEZERO_CONFIG);
-    expect(url.startsWith("https://example.com/sol-keeper/?")).toBe(true);
+    const url = buildRunLinkUrl({ origin: "https://example.com", pathname: "/outpost-x/" }, JEZERO_CONFIG);
+    expect(url.startsWith("https://example.com/outpost-x/?")).toBe(true);
   });
 });

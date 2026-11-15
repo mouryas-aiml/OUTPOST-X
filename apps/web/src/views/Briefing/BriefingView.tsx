@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { requiredMarginFraction, scenarioEsmBreakdown } from "@sol-keeper/sim";
+import { requiredMarginFraction, scenarioEsmBreakdown } from "@outpost-x/sim";
 import { useRun } from "../../store/run.js";
 import { useDial } from "../../store/dial.js";
 import { LandingSiteMap } from "../../components/LandingSiteMap.js";

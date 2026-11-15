@@ -7,7 +7,7 @@
  *
  * Lives in engine/, not validation/, and is exported from index.ts even though its only
  * in-package consumer is a test: scripts/generate-balance-doc.ts runs against the *built*
- * `@sol-keeper/sim` package (CLAUDE.md's own layout note — scripts consume the workspace
+ * `@outpost-x/sim` package (CLAUDE.md's own layout note — scripts consume the workspace
  * package through node_modules, not a source import), and validation/ is excluded from the
  * build (tsconfig.build.json) on purpose, so this couldn't be reached from there.
  */

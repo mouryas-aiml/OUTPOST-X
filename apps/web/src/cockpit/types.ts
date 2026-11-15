@@ -1,6 +1,6 @@
 /**
  * M9.1 — Station Cockpit View (presentation layer only, docs/PHASE2_BRIEF.md's own M9.1
- * section — the outer, non-git-tracked copy; `sol-keeper/docs/PHASE2_BRIEF.md` predates it).
+ * section — the outer, non-git-tracked copy; `outpost-x/docs/PHASE2_BRIEF.md` predates it).
  *
  * Shared types for the screen-map data (one entry per station photograph) and the generic
  * panel-to-region assignment this view runs on every console. Nothing here touches

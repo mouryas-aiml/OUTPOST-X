@@ -2,7 +2,7 @@ import {
   isCrisisScenario,
   type Scenario,
   type SimState,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 
 export interface CrisisThreatAssessment {
   readonly isCrisis: boolean;

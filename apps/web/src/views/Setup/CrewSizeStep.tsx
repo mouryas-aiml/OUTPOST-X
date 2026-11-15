@@ -1,4 +1,4 @@
-import { CREW_NAMES } from "@sol-keeper/sim";
+import { CREW_NAMES } from "@outpost-x/sim";
 import { useSetup } from "../../store/setup.js";
 
 const MIN_CREW_SIZE = 2;

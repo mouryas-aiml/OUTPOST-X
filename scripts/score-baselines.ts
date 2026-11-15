@@ -7,7 +7,7 @@
  * apps/web/public/scoring/baselines.json.
  *
  * Usage:
- *   pnpm --filter @sol-keeper/sim run build
+ *   pnpm --filter @outpost-x/sim run build
  *   node scripts/score-baselines.ts
  */
 import { mkdir, writeFile } from "node:fs/promises";

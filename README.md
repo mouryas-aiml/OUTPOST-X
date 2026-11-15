@@ -1,13 +1,14 @@
-# Sol Keeper
+# OUTPOST-X
 
-**Junior Astronaut Mission Trainer** — a NASA Space Apps Challenge 2026 submission for
-*"Build a Junior Astronaut Mission Trainer"*.
+**Take Command. Build Beyond Earth. Shape Humanity’s Next Frontier.**
 
-**Live app:** [https://solkeeper.vercel.app/](https://solkeeper.vercel.app/) · **Static About Page:** [`about.html`](apps/web/public/about.html)
+*A NASA-inspired planetary mission simulator and command console.*
 
-Sol Keeper is a browser-based, offline-ready mission simulator designed for students ages 7–12 (with depths flexing to high school and classroom use) that transforms deep space survival constraints into gameplay. Operating lunar and Martian outposts across 5 training missions and 3 historical crisis replays, players make real decisions across five station consoles—balancing life support, power load shedding, radiation sheltering, food production, and communication light delays. Every number the simulation computes traces directly to authenticated NASA technical standards (BVAD, OCHMO, APR 8070.1) or real space weather and orbital telemetry (DONKI, OSDR, Horizons, Trek). Through the **Reality Dial**, the same deterministic physics engine is presented at three cognitive depths—Cadet (visual gauges, qualitative status words, Flesch–Kincaid Grade 3.6), Specialist (SI engineering units), and Commander (mathematical rates and equations)—ensuring that no choice is free and every decision teaches something true.
+**Static About Page:** [`about.html`](apps/web/public/about.html)
 
-Built by **Projonmo Apollo**, from CUET.
+OUTPOST-X is a browser-based, offline-ready planetary habitat and mission simulator that transforms deep-space survival constraints into gameplay. Operating lunar and Martian outposts across 5 training missions and 3 historical crisis replays, commanders make real decisions across five station consoles—balancing life support, power load shedding, radiation sheltering, food production, and communication light delays. Every number the simulation computes traces directly to authenticated NASA technical standards (BVAD, OCHMO, APR 8070.1) or real space weather and orbital telemetry (DONKI, OSDR, Horizons, Trek). Through the **Reality Dial**, the same deterministic physics engine is presented at three cognitive depths—Cadet (visual gauges, qualitative status words), Specialist (SI engineering units), and Commander (mathematical rates and equations)—ensuring that no choice is free and every decision teaches something true.
+
+Built by **Team XYZ**.
 
 ---
 
@@ -32,7 +33,7 @@ Experience the core mechanics, real data grounding, and Reality Dial in 60 secon
 
 ### Challenge Statement Requirements
 
-| Requirement Clause | Sol Keeper Feature | Where to See It | Evidence & Verification |
+| Requirement Clause | OUTPOST-X Feature | Where to See It | Evidence & Verification |
 |---|---|---|---|
 | **Kids ages 7–12 managing a lunar or Martian outpost** | Core web simulation with Martian outposts (*Jezero Outpost*, *Storm Watch*) and lunar bases (*First Light*, *The Long Night*, *Green Thumb*). | Homepage Launch Windows & Setup Wizard | `packages/sim/src/data/scenarios/`, audited in [`docs/STATEMENT_AUDIT.md`](docs/STATEMENT_AUDIT.md) (Clause 1). |
 | **Real decisions on life support, radiation, power, food, comms** | Five operational consoles (Life Support, Power, Comms, Incident Command, Mission Command) with 11 distinct active control levers. | Cockpit View and Station Tabs | `packages/sim/src/models/`, validated in `packages/sim/src/validation/`. |
@@ -228,7 +229,7 @@ photoperiod, etc.) are explicitly labelled `GAME-DESIGN` with `confidence: "tune
 
 ### Data Passport & Evidence Pedigree
 
-Every single dataset in Sol Keeper is cataloged in the **Data Passport** ([`docs/DATA_PASSPORT.md`](docs/DATA_PASSPORT.md) and the in-app **Data Passport** screen):
+Every single dataset in OUTPOST-X is cataloged in the **Data Passport** ([`docs/DATA_PASSPORT.md`](docs/DATA_PASSPORT.md) and the in-app **Data Passport** screen):
 - **Pedigree Labels**: `Live`, `Snapshot`, `Archived`, `Published`, `Derived`, or `Tuned`.
 - **Human Evidence Standards**: Distinguished between `read by a person` (audited directly in literature) vs `wording adopted, quote not confirmed`.
 - **Verification Status**: Validated against primary documentation and verified by the development lead.
@@ -236,9 +237,9 @@ Every single dataset in Sol Keeper is cataloged in the **Data Passport** ([`docs
 
 ## Credits & Licenses
 
-Every number in Sol Keeper comes from published space agency research, and all open source software, media assets, and AI tools are fully credited:
+Every number in OUTPOST-X comes from published space agency research, and all open source software, media assets, and AI tools are fully credited:
 
-- **Software Licenses**: Sol Keeper's runtime stack uses permissive open-source packages (MIT, ISC, BSD-2-Clause, 0BSD, Apache-2.0). See [`docs/CREDITS.md`](docs/CREDITS.md) for the complete dependency manifest generated via `pnpm licenses list --prod`.
+- **Software Licenses**: OUTPOST-X's runtime stack uses permissive open-source packages (MIT, ISC, BSD-2-Clause, 0BSD, Apache-2.0). See [`docs/CREDITS.md`](docs/CREDITS.md) for the complete dependency manifest generated via `pnpm licenses list --prod`.
 - **Scientific Sources**: NASA technical standards (BVAD-2022, OCHMO technical briefs), NOAA space weather indices, NIOSH/NCRP health thresholds, and peer-reviewed literature across *Science*, *Frontiers*, and *ICES*. Full catalog in [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) and [`docs/DATA_PASSPORT.md`](docs/DATA_PASSPORT.md).
 - **NASA Image Library**: Hardware photography across console fact cards renders each photo's official agency credit line directly underneath the thumbnail.
 - **AI Use Disclosure**: Developed with Claude Code for engineering and verification. Media includes one AI-generated illustrative video (`launch-windows-astronaut.mp4`). **Zero AI services are called at runtime**, and **no player data leaves the device**.
@@ -265,7 +266,7 @@ For complete license texts, agency citations, and asset provenance, see [`docs/C
 
 ```bash
 pnpm install
-pnpm --filter @sol-keeper/web dev    # dev server
+pnpm --filter @outpost-x/web dev    # dev server
 pnpm verify                          # typecheck + lint + test
 pnpm e2e                             # Playwright, against a production build
 ```

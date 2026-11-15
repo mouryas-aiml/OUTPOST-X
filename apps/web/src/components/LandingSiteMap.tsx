@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import type { Map as LeafletMap } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import type { Body } from "@sol-keeper/sim";
+import type { Body } from "@outpost-x/sim";
 import { useRun } from "../store/run.js";
 import { TREK_LAYERS } from "../map/trekLayers.js";
 

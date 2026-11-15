@@ -3,7 +3,7 @@
  * Status ☑ tested there — the brief is explicit that a tile URL must never be guessed, and
  * this file exists so nothing in map/ has to touch trek.nasa.gov's API docs directly.
  */
-import type { Body } from "@sol-keeper/sim";
+import type { Body } from "@outpost-x/sim";
 
 export interface TrekLayer {
   readonly urlTemplate: string;

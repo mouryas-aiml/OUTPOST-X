@@ -2,7 +2,7 @@
  * Real-browser check for the First Light onboarding tutorial and gauge help (M8.7).
  *
  * Deliberately imports from `@playwright/test` directly, not `./fixtures.js` — every other
- * spec's fixture pre-seeds `sol-keeper.onboarding` as already-seen so the tutorial doesn't
+ * spec's fixture pre-seeds `outpost-x.onboarding` as already-seen so the tutorial doesn't
  * hijack their first tab click; this file is the one place that needs the real, fresh,
  * unseen state a first-time player actually gets.
  */

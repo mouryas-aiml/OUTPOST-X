@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { FiClock, FiPlay } from "react-icons/fi";
 import { SPEEDS, useRun, type Speed } from "../store/run.js";
 import { useDial } from "../store/dial.js";
-import { isCrisisScenario, units } from "@sol-keeper/sim";
+import { isCrisisScenario, units } from "@outpost-x/sim";
 import { timestampLabel } from "../dial/missionTime.js";
 
 const SPEED_LABELS: Record<Speed, string> = {

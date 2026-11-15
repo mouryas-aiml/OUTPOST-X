@@ -1,16 +1,16 @@
 {
-  "name": "@sol-keeper/web",
+  "name": "@outpost-x/web",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "pnpm --filter @sol-keeper/sim build && vite build",
+    "build": "pnpm --filter @outpost-x/sim build && vite build",
     "preview": "vite preview",
-    "typecheck": "pnpm --filter @sol-keeper/sim build && tsc -p tsconfig.json --noEmit"
+    "typecheck": "pnpm --filter @outpost-x/sim build && tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@sol-keeper/sim": "workspace:*",
+    "@outpost-x/sim": "workspace:*",
     "d3-force": "^3.0.0",
     "framer-motion": "^13.4.4",
     "i18next": "^26.4.2",

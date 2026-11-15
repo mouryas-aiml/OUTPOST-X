@@ -1,4 +1,4 @@
-import type { ScenarioId } from "@sol-keeper/sim";
+import type { ScenarioId } from "@outpost-x/sim";
 import type { DialLevel } from "./types.js";
 
 export interface MissionGuide {

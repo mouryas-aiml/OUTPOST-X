@@ -16,7 +16,7 @@ import {
   radiation,
   type CrewLocation,
   type SystemId,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { DashboardGrid } from "../../components/DashboardGrid.js";
 import { CockpitTarget } from "../../cockpit/CockpitTarget.js";
 import { CrisisActionBanner } from "../../components/CrisisActionBanner.js";

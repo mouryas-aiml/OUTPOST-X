@@ -34,7 +34,7 @@ export function PlaytestBanner() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `sol-keeper-playtest-${Date.now()}.json`;
+    a.download = `outpost-x-playtest-${Date.now()}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

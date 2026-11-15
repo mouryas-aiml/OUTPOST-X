@@ -4,7 +4,7 @@
  * Deliberately *not* in apps/web/api/, because Vercel turns every file under api/ into a
  * deployed endpoint — a test file there would ship as a public function.
  *
- * What this actually guards is the monorepo seam: the handler imports @sol-keeper/sim, and
+ * What this actually guards is the monorepo seam: the handler imports @outpost-x/sim, and
  * Vercel's Node builder resolves that through node_modules rather than through Vite's
  * config. If the workspace link ever breaks, this fails here rather than silently at M5.
  */
@@ -20,11 +20,11 @@ describe("GET /api/health", () => {
 
     const body = (await response.json()) as HealthResponse;
     expect(body.status).toBe("ok");
-    expect(body.service).toBe("sol-keeper");
+    expect(body.service).toBe("outpost-x");
     expect(body.sim.resolved).toBe(true);
   });
 
-  it("proves the @sol-keeper/sim workspace package resolved inside the function", async () => {
+  it("proves the @outpost-x/sim workspace package resolved inside the function", async () => {
     const response = await GET(new Request("https://example.test/api/health"));
     const body = (await response.json()) as HealthResponse;
 

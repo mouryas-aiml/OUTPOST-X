@@ -52,7 +52,7 @@ export const useAccessibility = create<AccessibilityStore>()(
       },
     }),
     {
-      name: "sol-keeper.low-power-mode",
+      name: "outpost-x.low-power-mode",
       storage: createJSONStorage(() => safeLocalStorage),
     },
   ),

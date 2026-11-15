@@ -4,7 +4,7 @@
  * render — which matters because the claims they encode are exactly the ones worth getting
  * wrong quietly: "this really is what the engine recorded," not "this looks about right."
  */
-import { directEffects, type LogEntry } from "@sol-keeper/sim";
+import { directEffects, type LogEntry } from "@outpost-x/sim";
 
 /**
  * An incident is any entry the engine recorded as the cause of at least one other entry.

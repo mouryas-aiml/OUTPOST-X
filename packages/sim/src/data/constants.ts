@@ -1,5 +1,5 @@
 /**
- * Every physical and mission parameter in Sol Keeper (brief rule 1).
+ * Every physical and mission parameter in OUTPOST-X (brief rule 1).
  *
  * House style, so that a teammate checking a value against the source PDF can change one
  * number in one place:
@@ -80,7 +80,7 @@ export const crew = {
   // BVAD-2022 PDF, section 3.3.4 "Crewtime Estimates", Table 3-28: "Assuming the exercise
   // time is 0.5 CM-h/d shorter due to working against gravity [than in orbit], a crewmember
   // will have 69.7 CM-h/wk of VST [Variably-Scheduled Time] ... on a planetary surface" —
-  // the surface figure, not the orbital 67.2 CM-h/wk one, since every Sol Keeper scenario is
+  // the surface figure, not the orbital 67.2 CM-h/wk one, since every OUTPOST-X scenario is
   // a surface habitat. VST is explicitly "available for either maintaining the life support
   // system or for other activities" — the assignable-work pool this budget models.
   dailyAssignableWorkHoursPerCrew: c({

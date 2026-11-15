@@ -11,7 +11,7 @@
  * proven directly against the mechanism a real replay actually uses.
  */
 import { beforeEach, describe, expect, it } from "vitest";
-import { replayRun, type RecordedInput } from "@sol-keeper/sim";
+import { replayRun, type RecordedInput } from "@outpost-x/sim";
 import { applyRunLinkFromLocation } from "../src/share/bootRunLink.js";
 import { encodeRunLinkFragment, encodeRunLinkQuery, type RunLinkConfig } from "../src/share/runLink.js";
 import { useRun } from "../src/store/run.js";

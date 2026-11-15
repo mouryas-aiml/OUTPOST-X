@@ -1,4 +1,4 @@
-import type { SystemId, SystemState } from "@sol-keeper/sim";
+import type { SystemId, SystemState } from "@outpost-x/sim";
 import { useAppLanguage } from "../i18n/useAppLanguage.js";
 import "./CadetPowerPriorityCards.css";
 

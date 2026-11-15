@@ -59,7 +59,7 @@ test.describe("App shell", () => {
     await expect(page.getByText("Mission Setup")).toBeVisible();
 
     await skipSetup(page);
-    await expect(page.locator("h1")).toHaveText("Sol Keeper");
+    await expect(page.locator("h1")).toHaveText("OUTPOST-X");
     await expect(page.locator(".mission-site")).toContainText("Jezero Crater");
     await expect(page.getByText("Mission Briefing")).toBeVisible();
   });
@@ -277,7 +277,7 @@ test.describe("Life Support console", () => {
     // now, the same "not imageless forever" reasoning briefing.spec.ts's own equivalent check
     // already documents for the Trek map tiles — checked here the same way: every <img>'s src
     // must be real NASA Image Library asset content, never a logo/insignia graphic.
-    // `.app-brand-logo` is excluded: the app shell's own "Sol Keeper" mark (BrandMark.tsx, on
+    // `.app-brand-logo` is excluded: the app shell's own "OUTPOST-X" mark (BrandMark.tsx, on
     // every non-Home page now) is this project's own team logo, a real, separate, permitted
     // category — not a rule 5 violation to check for here.
     const srcs = await page

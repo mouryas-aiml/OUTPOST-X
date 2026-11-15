@@ -7,7 +7,7 @@ import {
   FiShield,
   FiZap,
 } from "react-icons/fi";
-import { isCrisisScenario } from "@sol-keeper/sim";
+import { isCrisisScenario } from "@outpost-x/sim";
 import { useRun } from "../store/run.js";
 import { assessCrisisOutcome } from "../dial/crisisThreatAssessment.js";
 import "./CrisisActionBanner.css";
@@ -84,7 +84,7 @@ export function CrisisActionBanner({
     };
 
     const handleOpenDebrief = () => {
-      window.dispatchEvent(new CustomEvent("sol-keeper:navigate", { detail: "debrief" }));
+      window.dispatchEvent(new CustomEvent("outpost-x:navigate", { detail: "debrief" }));
     };
 
     return (

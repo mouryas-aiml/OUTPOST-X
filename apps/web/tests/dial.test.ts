@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createInitialState, getScenario, tick, type Params } from "@sol-keeper/sim";
+import { createInitialState, getScenario, tick, type Params } from "@outpost-x/sim";
 import {
   presentBattery,
   presentCabin,

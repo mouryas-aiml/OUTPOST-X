@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { SCENARIOS } from "@sol-keeper/sim";
+import { SCENARIOS } from "@outpost-x/sim";
 import { useSetup } from "../../store/setup.js";
 import { useDial } from "../../store/dial.js";
 import { SCENARIO_LABELS } from "../../dial/scenarioLabels.js";

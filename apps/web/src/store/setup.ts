@@ -24,7 +24,7 @@ import {
   type Scenario,
   type ScenarioId,
   type ShieldingApproach,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { MAX_CREW_SIZE, MAX_SEED, MIN_CREW_SIZE, type RunLinkConfig } from "../share/runLink.js";
 import { useRun, type RunSetupChoices } from "./run.js";
 

@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      // The brief's manifest name — never a NASA name or the agency's own branding
+      // The manifest uses the product brand — never a NASA name or the agency's own branding
       // (rule 5) — and no auto-update prompt UI to build for the MVP, so `autoUpdate`
       // just installs the newest service worker on the next load rather than stalling on
       // a stale cached version indefinitely.
@@ -19,14 +19,11 @@ export default defineConfig({
       // costs nothing, since offline support only matters on the *next* load anyway.
       injectRegister: "script-defer",
       manifest: {
-        name: "Sol Keeper",
-        short_name: "Sol Keeper",
-        description: "Run a Mars or Moon outpost on real NASA numbers.",
-        // M9.5: matches styles.css's own --shell-accent/--shell-bg — theme_color tints the
-        // OS/browser chrome (status bar, task switcher), background_color is the splash
-        // screen shown while the PWA cold-starts, before any CSS has painted.
-        theme_color: "#0b3d91",
-        background_color: "#eef3fb",
+        name: "OUTPOST-X",
+        short_name: "OUTPOST-X",
+        description: "Take Command. Build Beyond Earth. Shape Humanity's Next Frontier.",
+        theme_color: "#07111f",
+        background_color: "#07111f",
         display: "standalone",
         start_url: "/",
         icons: [

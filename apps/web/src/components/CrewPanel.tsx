@@ -1,6 +1,6 @@
 import { useRun } from "../store/run.js";
 import { useDial } from "../store/dial.js";
-import { radiation } from "@sol-keeper/sim";
+import { radiation } from "@outpost-x/sim";
 import { statusFromReserve } from "./status.js";
 import { presentDose } from "../dial/present.js";
 import { statusWord } from "../dial/statusWords.js";

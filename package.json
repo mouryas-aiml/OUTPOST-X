@@ -1,5 +1,5 @@
 {
-  "name": "sol-keeper",
+  "name": "outpost-x",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -14,7 +14,7 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "sim": "pnpm --filter @sol-keeper/sim run sim",
+    "sim": "pnpm --filter @outpost-x/sim run sim",
     "gen:source-verification": "node scripts/generate-source-verification.ts",
     "bn-review:export": "node scripts/bn-review-export.ts",
     "bn-review:import": "node scripts/bn-review-import.ts",

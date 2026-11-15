@@ -93,7 +93,7 @@ lacks).
 | ID | Stands for | Used for | Verified by | Status |
 |---|---|---|---|---|
 | STOICHIOMETRY | Textbook physical chemistry and IAU/CODATA defined values — see "Derived values" above | molar masses, gas constant, mmHg, AU, light-time per AU, electrolysis ratio | n/a | ☑ |
-| GAME-DESIGN | Sol Keeper gameplay tuning — **not a NASA source** — see "Game simplifications" below | shielding curves, thermal conductance, failure rates, crop photoperiod, cell efficiency | n/a | ☑ |
+| GAME-DESIGN | OUTPOST-X gameplay tuning — **not a NASA source** — see "Game simplifications" below | shielding curves, thermal conductance, failure rates, crop photoperiod, cell efficiency | n/a | ☑ |
 
 ## Game simplifications (disclosed to players)
 - Shielding curves, crop yields, thermal conductance, and failure rates are tuned for gameplay.

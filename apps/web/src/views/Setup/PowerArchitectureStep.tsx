@@ -4,7 +4,7 @@ import {
   landingSitesForBody,
   sizePowerArchitecture,
   type PowerArchitecture,
-} from "@sol-keeper/sim";
+} from "@outpost-x/sim";
 import { useSetup } from "../../store/setup.js";
 
 const ARCHITECTURES: readonly { id: PowerArchitecture; label: string; hint: string }[] = [
