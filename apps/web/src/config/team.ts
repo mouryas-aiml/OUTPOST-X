@@ -6,16 +6,15 @@
 export interface TeamMember {
   name: string;
   role?: string;
+  linkedin?: string;
 }
 
 export const TEAM_CONFIG = {
-  teamName: "Team XYZ",
+  teamName: "TensorMinds",
   members: [
-    { name: "Team Member 1", role: "Lead Developer" },
-    { name: "Team Member 2", role: "UI/UX Designer" },
-    { name: "Team Member 3", role: "Simulation Engineer" },
-    { name: "Team Member 4", role: "Data & Science" },
-    { name: "Team Member 5", role: "Full-Stack Developer" },
+    { name: "Mourya S", role: "Team Lead & Lead Developer", linkedin: "https://www.linkedin.com/in/mouryas" },
+    { name: "Chitra Shree K", role: "UI/UX & Aerospace Simulation", linkedin: "https://www.linkedin.com/in/chitra-shree-k" },
+    { name: "Monika S", role: "Data Architect & Systems Engineering", linkedin: "https://www.linkedin.com/in/monika-s" },
   ] as TeamMember[],
   year: 2026,
   projectName: "OUTPOST-X",

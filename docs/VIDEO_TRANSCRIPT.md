@@ -1,7 +1,7 @@
 # OUTPOST-X - Project Presentation Video Transcript
 
 **Project:** OUTPOST-X (Junior Astronaut Mission Trainer)  
-**Team:** Team XYZ  
+**Team:** TensorMinds  
 **Target Duration:** 2 minutes (120 seconds)  
 **Associated Captions:** [`docs/video_captions.vtt`](video_captions.vtt)
 
@@ -59,6 +59,6 @@
 - **Narration (Voiceover):**  
   *"OUTPOST-X requires zero logins, zero downloads, and works completely offline as a Progressive Web App in English and Bangla. Tested across 75 test suites and 4,050 balance seeds, it’s built for real classrooms and real young astronauts. Welcome to deep space survival."*
 - **On-Screen Text:**  
-  *OUTPOST-X · Built by Team XYZ · NASA Space Apps Challenge 2026*  
+  *OUTPOST-X · Built by TensorMinds · NASA Space Apps Challenge 2026*  
   *Live at: solkeeper.vercel.app*
 
