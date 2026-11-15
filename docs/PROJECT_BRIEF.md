@@ -1,4 +1,4 @@
-# PROJECT BRIEF — SOL KEEPER: Junior Astronaut Mission Trainer
+# PROJECT BRIEF — OUTPOST-X: Junior Astronaut Mission Trainer
 
 NASA Space Apps Challenge 2026 — "Build a Junior Astronaut Mission Trainer"
 MVP deadline: 2026-09-27. Hosting: Vercel.

@@ -66,8 +66,7 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 0;
-  background: var(--shell-bg);
-  background-size: cover;
+  background: transparent;
   color: var(--text);
   font-family:
     system-ui,
@@ -565,14 +564,12 @@ code {
 
   html,
   body {
-    background: #07111f;
+    background: transparent;
     color: var(--text);
   }
 
   body {
-    background-image:
-      radial-gradient(circle at 85% 0%, rgba(35, 136, 194, 0.16), transparent 32rem),
-      linear-gradient(180deg, #07111f 0%, #081321 100%);
+    background: transparent;
   }
 
   html[data-station-bg="moon"] body,

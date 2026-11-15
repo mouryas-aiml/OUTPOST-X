@@ -56,6 +56,7 @@ import { applyRunLinkFromLocation, type BootRunLinkResult } from "./share/bootRu
 import { DebugOverlay } from "./components/DebugOverlay.js";
 import { BrandMark } from "./components/BrandMark.js";
 import { AppFooter } from "./components/AppFooter.js";
+import { SpaceBackground } from "./components/ui/SpaceBackground.js";
 import { PlaytestBanner } from "./components/PlaytestBanner.js";
 import { recordRetry } from "./store/playtest.js";
 import { useAppLanguage } from "./i18n/useAppLanguage.js";
@@ -372,7 +373,9 @@ function AppShell({ initialView = "home" }: AppProps) {
   }, []);
 
   return (
-    <main className={`app ${view === "home" ? "app-full-bleed" : ""}`}>
+    <>
+      <SpaceBackground />
+      <main className={`app ${view === "home" ? "app-full-bleed" : ""}`}>
       {debugOverlay && <DebugOverlay />}
 
       {view === "home" ? (
@@ -784,5 +787,6 @@ function AppShell({ initialView = "home" }: AppProps) {
 
       <PlaytestBanner />
     </main>
+    </>
   );
 }

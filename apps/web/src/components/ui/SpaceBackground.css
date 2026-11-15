@@ -1,0 +1,28 @@
+.space-bg-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  background-color: #050816;
+}
+
+.space-bg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Subtle dark vignette overlay to preserve maximum contrast & readability */
+.space-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(5, 8, 22, 0.2) 0%, rgba(5, 8, 22, 0.75) 100%),
+    linear-gradient(180deg, rgba(6, 13, 26, 0.4) 0%, rgba(6, 13, 26, 0.7) 100%);
+  pointer-events: none;
+}

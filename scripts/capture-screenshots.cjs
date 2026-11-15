@@ -14,15 +14,36 @@ const path = require('path');
     fs.mkdirSync(outDir, { recursive: true });
   }
 
-  // 1. Landing Hero
+  // 1. Landing Hero (Top)
   console.log('Capturing Landing Hero...');
   await page.goto('http://localhost:5173/', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(1000);
   await page.screenshot({ path: path.join(outDir, '01-landing-hero.png'), fullPage: false });
 
-  // 2. Click "Launch Outpost" (second CTA button)
+  // 2. Scroll to Artemis II section
+  console.log('Capturing Artemis II Section...');
+  const artemisEl = await page.$('.modern-hero-artemis');
+  if (artemisEl) {
+    await artemisEl.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(1500);
+    await page.screenshot({ path: path.join(outDir, '01b-artemis-section.png'), fullPage: false });
+  }
+
+  // 3. Scroll to Mission Pillars
+  console.log('Capturing Mission Pillars...');
+  const pillarsEl = await page.$('.modern-hero-pillars');
+  if (pillarsEl) {
+    await pillarsEl.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(1000);
+    await page.screenshot({ path: path.join(outDir, '01c-mission-pillars.png'), fullPage: false });
+  }
+
+  // 4. Click "Launch Outpost" (second CTA button)
   console.log('Clicking Launch Outpost...');
+  await page.goto('http://localhost:5173/', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(500);
   await page.click('button.modern-hero-cta-btn:not(.modern-hero-play-btn)');
-  await new Promise(r => setTimeout(r, 1500));
+  await page.waitForTimeout(1500);
   await page.screenshot({ path: path.join(outDir, '02-setup-wizard.png'), fullPage: false });
   console.log('02-setup-wizard.png saved');
 
@@ -31,7 +52,7 @@ const path = require('path');
   if (launchBtn) {
     console.log('Launching standard mission from setup...');
     await launchBtn.click();
-    await new Promise(r => setTimeout(r, 2000));
+    await page.waitForTimeout(2000);
   }
 
   // Standard Console Tabs
@@ -41,8 +62,7 @@ const path = require('path');
     { id: 'comms', file: '05-comms-console.png' },
     { id: 'incidentCommand', file: '06-incident-command.png' },
     { id: 'missionCommand', file: '07-mission-command.png' },
-    { id: 'habitat', file: '08-habitat-view.png' },
-    { id: 'crisis', file: '09-crisis-view.png' }
+    { id: 'habitat', file: '08-habitat-view.png' }
   ];
 
   for (const tab of standardTabs) {
@@ -51,7 +71,7 @@ const path = require('path');
     if (btn) {
       console.log(`Clicking tab ${tab.id}...`);
       await btn.click();
-      await new Promise(r => setTimeout(r, 1200));
+      await page.waitForTimeout(1000);
       await page.screenshot({ path: path.join(outDir, tab.file), fullPage: false });
       console.log(`${tab.file} saved`);
     } else {
@@ -59,6 +79,6 @@ const path = require('path');
     }
   }
 
-  console.log('All standard mission screenshots captured!');
+  console.log('All screenshots captured successfully!');
   await browser.close();
 })();

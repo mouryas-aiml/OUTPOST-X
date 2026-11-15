@@ -1,6 +1,6 @@
 import { ReactLenis } from "lenis/react";
 import { motion, useInView, useMotionTemplate, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { FiArrowRight, FiBookOpen, FiChevronRight, FiClock, FiMapPin, FiWind, FiZap } from "react-icons/fi";
+import { FiActivity, FiArrowRight, FiBookOpen, FiChevronRight, FiClock, FiMapPin, FiWind, FiZap } from "react-icons/fi";
 import { useEffect, useRef, useState } from "react";
 import { SCENARIOS, type ScenarioId, type StandardScenarioId } from "@outpost-x/sim";
 import { useAccessibility } from "../../store/accessibility.js";
@@ -32,6 +32,8 @@ export const SmoothScrollHero = ({
       <ReactLenis root options={{ duration: 0.7 }}>
         <Nav onLaunchMission={onLaunchMission} onFastPlay={onFastPlay} onOpenCredits={onOpenCredits} />
         <Hero />
+        <MissionPillars />
+        <ArtemisSection />
         <Schedule onLaunchMission={onLaunchMission} />
         {onLaunchMissionOfTheDay && (
           <section className="modern-hero-motd-section" aria-label="Mission of the Day">
@@ -189,17 +191,17 @@ const HeroHeadline = () => {
 
   return (
     <motion.div className="modern-hero-headline" style={{ opacity, y }}>
-      <p className="modern-hero-headline-eyebrow">OUTPOST-X · MISSION CONTROL</p>
+      <p className="modern-hero-headline-eyebrow">OUTPOST-X · NEXT-GEN PLANETARY MISSION CONTROL</p>
       <h1 className="modern-hero-headline-title">Take Command. Build Beyond Earth. Shape Humanity’s Next Frontier.</h1>
       <p className="modern-hero-headline-sub">
-        Planetary habitat simulation grounded in authentic NASA telemetry, life-support engineering, and deep-space survival constraints.
+        An advanced planetary habitat simulator and junior astronaut platform engineered on authentic NASA telemetry, life-support architectures, and deep-space survival physics.
       </p>
       <div className="modern-hero-headline-missions">
-        <span>Jezero Outpost</span>
+        <span>Jezero Crater Outpost</span>
         <span aria-hidden="true">·</span>
-        <span>First Light</span>
+        <span>Connecting Ridge (Moon)</span>
         <span aria-hidden="true">·</span>
-        <span>The Long Night</span>
+        <span>Marius Hills Lava Tubes</span>
       </div>
     </motion.div>
   );
@@ -264,20 +266,20 @@ const CenterImage = ({ fadeEnd }: { fadeEnd: number }) => {
 // gentler distance — keeps every card close to its natural flow position on every viewport.
 const HERO_FEATURES: readonly { title: string; body: string; start: number; end: number }[] = [
   {
-    title: "Every number is real.",
-    body: "Crew metabolic rate, battery chemistry, radiation limits, dust-storm duration — every constant traces back to a published NASA source, credited on the Data Sources screen.",
+    title: "Every variable is authenticated NASA data.",
+    body: "Crew metabolic consumption, battery chemistries, shielding halving thicknesses, and dust storm obscuration—every constant traces directly to published NASA BVAD, OCHMO, and technical standards.",
     start: -15,
     end: 20,
   },
   {
-    title: "Real incidents, not scripted drama.",
-    body: "A Mir fire, an Apollo 13 CO2 scrubber failure, an ISS depressurization — the incidents you respond to are drawn from real spaceflight history, not invented for the game.",
+    title: "Real spaceflight incident command.",
+    body: "Face authentic emergencies: Apollo 13 square-to-round LiOH adapter improvisations, August 1972 extreme solar proton events, and Mir station fire suppression. Zero invented drama.",
     start: 15,
     end: -20,
   },
   {
-    title: "Three depths, one simulation.",
-    body: "Cadet, Specialist, or Commander — the Reality Dial changes how the mission is explained, never the physics underneath it.",
+    title: "Three cognitive tiers, one deterministic physics engine.",
+    body: "The Reality Dial switches seamlessly between Cadet (intuitive status and gauges), Specialist (SI engineering units), and Commander (mathematical differential rates) without altering underlying simulation state.",
     start: -15,
     end: 20,
   },
@@ -528,6 +530,126 @@ const ScheduleVideoBackground = () => {
       )}
       <div className="modern-hero-schedule-bg-gradient" />
     </div>
+  );
+};
+
+const MissionPillars = () => {
+  return (
+    <section className="modern-hero-pillars" aria-label="OUTPOST-X Operational Capabilities">
+      <div className="pillars-header">
+        <span className="pillars-eyebrow">AEROSPACE ARCHITECTURE &amp; SURVIVAL SYSTEMS</span>
+        <h2 className="pillars-title">Engineered for Deep-Space Command</h2>
+        <p className="pillars-subtitle">
+          OUTPOST-X bridges authentic NASA space biology and life-support standards into a responsive,
+          high-stakes operational simulation across Moon and Mars environments.
+        </p>
+      </div>
+
+      <div className="pillars-grid">
+        <div className="pillar-card">
+          <div className="pillar-icon-box">
+            <FiActivity aria-hidden="true" />
+          </div>
+          <h3 className="pillar-heading">Closed-Loop ECLSS</h3>
+          <p className="pillar-text">
+            Balance O₂, CO₂ scrubbers, cabin pressure, and water recovery systems. Every metabolic rate
+            adheres to NASA BVAD human spaceflight parameters.
+          </p>
+        </div>
+
+        <div className="pillar-card">
+          <div className="pillar-icon-box">
+            <FiZap aria-hidden="true" />
+          </div>
+          <h3 className="pillar-heading">Fission &amp; Solar Microgrids</h3>
+          <p className="pillar-text">
+            Survive 354-hour lunar nights and Martian dust storms. Balance battery thermal limits with
+            dynamic load shedding across life support, comms, and research.
+          </p>
+        </div>
+
+        <div className="pillar-card">
+          <div className="pillar-icon-box">
+            <FiWind aria-hidden="true" />
+          </div>
+          <h3 className="pillar-heading">Live Space Weather</h3>
+          <p className="pillar-text">
+            Grounded in real-time NASA DONKI solar flare telemetry and OSDR space biology studies. Monitor
+            coronal mass ejections and order timely storm shelter protocols.
+          </p>
+        </div>
+
+        <div className="pillar-card">
+          <div className="pillar-icon-box">
+            <FiClock aria-hidden="true" />
+          </div>
+          <h3 className="pillar-heading">Interplanetary Delay</h3>
+          <p className="pillar-text">
+            Experience real-world light-time comms lag between Earth and planetary outposts powered by
+            JPL Horizons ephemerides coordinates.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ArtemisSection = () => {
+  return (
+    <section className="modern-hero-artemis" aria-label="Artemis II Mission Trajectory Exploration">
+      <div className="artemis-card">
+        <div className="artemis-header">
+          <div>
+            <div className="artemis-badge-group">
+              <span className="artemis-badge">Artemis II Deep Space Navigation</span>
+              <span className="artemis-live-indicator">
+                <span className="artemis-live-dot" /> LIVE 3D ORBITAL TRAJECTORY
+              </span>
+            </div>
+            <h2 className="artemis-title">Artemis II: Humanity’s Return to Lunar Orbit</h2>
+            <p className="artemis-desc">
+              Track the authentic NASA translunar injection (TLI) and free-return trajectory loop. Four astronauts
+              venturing 10,400 km beyond the far side of the Moon before passive ballistic return to Earth.
+            </p>
+          </div>
+        </div>
+
+        <div className="artemis-iframe-wrapper">
+          <iframe
+            src="https://azmth.space/embed/artemis2"
+            width="100%"
+            height="480"
+            style={{ border: 0, borderRadius: "12px", overflow: "hidden" }}
+            title="Artemis II trajectory replay: azmth.space"
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
+
+        <div className="artemis-telemetry-grid">
+          <div className="artemis-stat-card">
+            <span className="artemis-stat-label">Flight Profile</span>
+            <span className="artemis-stat-value">Lunar Free-Return</span>
+            <span className="artemis-stat-sub">Passive Earth gravity return on engine failure</span>
+          </div>
+          <div className="artemis-stat-card">
+            <span className="artemis-stat-label">Mission Duration</span>
+            <span className="artemis-stat-value">10 Days · Crew of 4</span>
+            <span className="artemis-stat-sub">High-apogee checkout &amp; circumlunar loop</span>
+          </div>
+          <div className="artemis-stat-card">
+            <span className="artemis-stat-label">Max Distance</span>
+            <span className="artemis-stat-value">10,400+ km</span>
+            <span className="artemis-stat-sub">Beyond lunar farside, furthest human flight</span>
+          </div>
+          <div className="artemis-stat-card">
+            <span className="artemis-stat-label">Life Support Link</span>
+            <span className="artemis-stat-value">Orion ECLSS Suite</span>
+            <span className="artemis-stat-sub">CO₂ scrubbing, N₂/O₂ balance &amp; heat rejection</span>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

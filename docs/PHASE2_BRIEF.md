@@ -1,4 +1,4 @@
-# PHASE 2 BRIEF — SOL KEEPER: from simulation to trainer
+# PHASE 2 BRIEF — OUTPOST-X: from simulation to trainer
 Read first: @docs/PROJECT_BRIEF.md, @CLAUDE.md, @docs/DATA_SOURCES.md, @docs/LANDING_SITES.md.
 All earlier rules still apply (sourced constants only, determinism, no NASA logo,
 accessibility, env-var key handling, stop after each milestone).
