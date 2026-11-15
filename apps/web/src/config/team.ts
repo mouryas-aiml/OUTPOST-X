@@ -6,15 +6,27 @@
 export interface TeamMember {
   name: string;
   role?: string;
-  linkedin?: string;
+  linkedin: string;
 }
 
 export const TEAM_CONFIG = {
-  teamName: "TensorMinds",
+  teamName: "TENSORMINDS",
   members: [
-    { name: "Mourya S", role: "Team Lead & Lead Developer", linkedin: "https://www.linkedin.com/in/mouryas" },
-    { name: "Chitra Shree K", role: "UI/UX & Aerospace Simulation", linkedin: "https://www.linkedin.com/in/chitra-shree-k" },
-    { name: "Monika S", role: "Data Architect & Systems Engineering", linkedin: "https://www.linkedin.com/in/monika-s" },
+    {
+      name: "Mourya S",
+      role: "Team Lead & Lead Developer",
+      linkedin: "https://www.linkedin.com/in/mourya-s/",
+    },
+    {
+      name: "Chitra Shree K",
+      role: "UI/UX & Aerospace Simulation",
+      linkedin: "https://www.linkedin.com/in/chitra-shree-k-982b69384/",
+    },
+    {
+      name: "Monika S",
+      role: "Data Architect & Systems Engineering",
+      linkedin: "https://www.linkedin.com/in/monika-s-259b8a3a9",
+    },
   ] as TeamMember[],
   year: 2026,
   projectName: "OUTPOST-X",

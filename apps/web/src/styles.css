@@ -4157,8 +4157,8 @@ html.cockpit-active .app {
 .app-footer {
   background: var(--bg-panel, #0c1a2b);
   border-top: 1px solid rgba(56, 189, 248, 0.2);
-  margin-top: 48px;
-  padding: 48px 24px 28px;
+  margin-top: 28px;
+  padding: 24px 24px 16px;
   border-radius: var(--radius-lg, 16px) var(--radius-lg, 16px) 0 0;
   box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
 }
@@ -4169,59 +4169,59 @@ html.cockpit-active .app {
   backdrop-filter: blur(12px);
   position: relative;
   z-index: 10;
+  border-radius: 0;
+  border-top: 1px solid rgba(56, 189, 248, 0.15);
+  padding: 24px 24px 16px;
 }
 
 .app-footer-container {
-  max-width: 1280px;
+  max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.5fr 1.3fr 1.2fr;
-  gap: 40px;
-  margin-bottom: 36px;
+  grid-template-columns: 1.4fr 1.1fr 1fr;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 16px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
   .app-footer-container {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 20px;
+    margin-bottom: 16px;
   }
 }
 
 .app-footer-brand-col {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .app-footer-logo {
-  height: 48px;
+  height: 38px;
   width: auto;
-  max-width: 260px;
+  max-width: 220px;
   object-fit: contain;
 }
 
 .app-footer-tagline {
   color: var(--accent, #38bdf8);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   margin: 0;
-}
-
-.app-footer-mission-sub {
-  color: var(--text-dim, #91abc2);
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin: 0;
+  line-height: 1.45;
+  max-width: 380px;
 }
 
 .app-footer-col-title {
   color: var(--text, #e8f4ff);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin: 0 0 14px 0;
+  margin: 0 0 10px 0;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -4229,12 +4229,7 @@ html.cockpit-active .app {
 
 .app-footer-team-highlight {
   color: var(--accent, #38bdf8);
-}
-
-.app-footer-team-desc {
-  color: var(--text-dim, #91abc2);
-  font-size: 0.82rem;
-  margin: 0 0 10px 0;
+  font-weight: 800;
 }
 
 .app-footer-team-list {
@@ -4243,40 +4238,45 @@ html.cockpit-active .app {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .app-footer-team-item {
   display: flex;
   align-items: center;
-  gap: 10px;
   font-size: 0.85rem;
 }
 
-.app-footer-member-badge {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  font-weight: 700;
+.app-footer-member-link {
+  color: var(--text, #e8f4ff);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--transition-fast, 150ms ease);
+  font-size: 0.86rem;
+  font-weight: 500;
+  padding: 2px 0;
+}
+
+.app-footer-member-link:hover {
   color: var(--accent, #38bdf8);
-  background: rgba(56, 189, 248, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  border-radius: 4px;
-  padding: 1px 5px;
+  transform: translateX(2px);
+}
+
+.app-footer-ext-icon {
+  color: var(--text-dim, #91abc2);
+  opacity: 0.7;
+  transition: opacity 150ms ease;
+}
+
+.app-footer-member-link:hover .app-footer-ext-icon {
+  color: var(--accent, #38bdf8);
+  opacity: 1;
 }
 
 .app-footer-member-name {
-  color: var(--text, #e8f4ff);
-  font-weight: 600;
-}
-
-.app-footer-member-role {
-  color: var(--text-dim, #91abc2);
-  font-size: 0.78rem;
-  background: var(--bg-raised, #10243a);
-  border: 1px solid var(--line, #21405d);
-  border-radius: 4px;
-  padding: 2px 7px;
-  margin-left: auto;
+  color: inherit;
 }
 
 .app-footer-links-list {
@@ -4285,17 +4285,18 @@ html.cockpit-active .app {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .app-footer-link {
   color: var(--accent, #38bdf8);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   text-decoration: none;
   transition: all var(--transition-fast, 150ms ease);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  padding: 2px 0;
 }
 
 .app-footer-link:hover {
@@ -4308,9 +4309,9 @@ html.cockpit-active .app {
   background: none;
   border: none;
   color: var(--accent, #38bdf8);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   cursor: pointer;
-  padding: 0;
+  padding: 2px 0;
   text-align: left;
   transition: all var(--transition-fast, 150ms ease);
 }
@@ -4322,9 +4323,9 @@ html.cockpit-active .app {
 }
 
 .app-footer-bottom-bar {
-  border-top: 1px solid rgba(56, 189, 248, 0.15);
-  padding-top: 22px;
-  max-width: 1280px;
+  border-top: 1px solid rgba(56, 189, 248, 0.12);
+  padding-top: 12px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 
@@ -4333,20 +4334,20 @@ html.cockpit-active .app {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .app-footer-copyright {
   color: var(--text-dim, #91abc2);
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   margin: 0;
 }
 
 .app-footer-attribution {
   color: #64748b;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   margin: 0;
-  max-width: 600px;
+  max-width: 620px;
 }
 
 /* ---------------------------------------------------------------- reduced motion (M9.7 fix) */
