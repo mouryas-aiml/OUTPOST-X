@@ -52,7 +52,7 @@ function summarise(state: SimState, params: Params, sols: number): void {
 
   console.log("");
   console.log("=".repeat(72));
-  console.log(`  SOL KEEPER — ${scenario.site.name} (${scenario.body})`);
+  console.log(`  OUTPOST-X — ${scenario.site.name} (${scenario.body})`);
   console.log(
     `  seed ${params.seed} | ${sols} sols requested | ended at hour ${state.hour} ` +
       `(sol ${hoursToSols(state.hour).toFixed(1)})`,

@@ -157,7 +157,7 @@ async function runChecks(): Promise<void> {
   // Report Summary
   // --------------------------------------------------------------------------
   console.log("\n========================================================");
-  console.log("       SOL KEEPER DOCUMENTATION CONSISTENCY REPORT      ");
+  console.log("       OUTPOST-X DOCUMENTATION CONSISTENCY REPORT      ");
   console.log("========================================================\n");
 
   let failures = 0;

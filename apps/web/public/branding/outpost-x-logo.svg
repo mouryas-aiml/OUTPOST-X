@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img" aria-labelledby="ox-title ox-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-labelledby="ox-title ox-desc">
   <title id="ox-title">OUTPOST-X</title>
   <desc id="ox-desc">OUTPOST-X mission control — planetary habitat and exploration symbol</desc>
   <defs>
     <linearGradient id="planet-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1e3a5f"/>
-      <stop offset="1" stop-color="#0a1628"/>
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0a1628"/>
     </linearGradient>
     <linearGradient id="dome-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#0284c7" stop-opacity="0.6"/>
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.7"/>
     </linearGradient>
     <linearGradient id="glow-grad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#38bdf8"/>
-      <stop offset="1" stop-color="#7dd3fc"/>
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#7dd3fc"/>
     </linearGradient>
     <radialGradient id="planet-surface" cx="50%" cy="80%" r="60%">
-      <stop offset="0" stop-color="#f97316" stop-opacity="0.3"/>
-      <stop offset="1" stop-color="#c2410c" stop-opacity="0.0"/>
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#c2410c" stop-opacity="0.0"/>
     </radialGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
@@ -27,45 +27,47 @@
   <!-- Symbol group: 160x160 centered at (96, 100) -->
   <g transform="translate(16, 20)">
     <!-- Planet circle -->
-    <circle cx="80" cy="100" r="72" fill="url(#planet-grad)" stroke="#1e3a5f" stroke-width="1.5"/>
+    <circle cx="80" cy="80" r="68" fill="url(#planet-grad)" stroke="#1e3a5f" stroke-width="1.5"/>
     <!-- Planet surface glow -->
-    <ellipse cx="80" cy="130" rx="60" ry="20" fill="url(#planet-surface)"/>
+    <ellipse cx="80" cy="110" rx="56" ry="18" fill="url(#planet-surface)"/>
     <!-- Ground line -->
-    <line x1="20" y1="130" x2="140" y2="130" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <line x1="24" y1="110" x2="136" y2="110" stroke="#f97316" stroke-width="1.5" opacity="0.7"/>
     <!-- Habitat dome -->
-    <path d="M52 130 Q52 92 80 90 Q108 92 108 130Z" fill="url(#dome-grad)" stroke="#38bdf8" stroke-width="1.5"/>
+    <path d="M52 110 Q52 74 80 72 Q108 74 108 110Z" fill="url(#dome-grad)" stroke="#38bdf8" stroke-width="1.8"/>
     <!-- Dome cross-struts -->
-    <line x1="80" y1="90" x2="80" y2="130" stroke="#7dd3fc" stroke-width="0.8" opacity="0.5"/>
-    <line x1="60" y1="110" x2="100" y2="110" stroke="#7dd3fc" stroke-width="0.8" opacity="0.5"/>
+    <line x1="80" y1="72" x2="80" y2="110" stroke="#7dd3fc" stroke-width="1" opacity="0.5"/>
+    <line x1="60" y1="92" x2="100" y2="92" stroke="#7dd3fc" stroke-width="1" opacity="0.5"/>
     <!-- Habitat base/legs -->
-    <rect x="64" y="128" width="32" height="4" rx="2" fill="#0284c7"/>
-    <rect x="60" y="128" width="4" height="10" rx="1" fill="#0369a1"/>
-    <rect x="96" y="128" width="4" height="10" rx="1" fill="#0369a1"/>
+    <rect x="64" y="108" width="32" height="4" rx="2" fill="#0284c7"/>
+    <rect x="60" y="108" width="4" height="8" rx="1" fill="#0369a1"/>
+    <rect x="96" y="108" width="4" height="8" rx="1" fill="#0369a1"/>
     <!-- Signal dish -->
-    <path d="M105 108 Q118 100 122 112" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
-    <line x1="105" y1="108" x2="109" y2="128" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M105 88 Q118 80 122 92" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="105" y1="88" x2="109" y2="108" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
     <!-- Signal waves -->
-    <path d="M120 96 Q130 92 136 100" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.7"/>
-    <path d="M124 88 Q138 82 146 94" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.4"/>
+    <path d="M120 76 Q130 72 136 80" fill="none" stroke="#38bdf8" stroke-width="1.6" opacity="0.75"/>
+    <path d="M124 68 Q138 62 146 74" fill="none" stroke="#38bdf8" stroke-width="1.2" opacity="0.45"/>
     <!-- Orbit ring -->
-    <ellipse cx="80" cy="100" rx="72" ry="22" fill="none" stroke="url(#glow-grad)" stroke-width="1.5" opacity="0.6" transform="rotate(-15 80 100)"/>
+    <ellipse cx="80" cy="80" rx="72" ry="22" fill="none" stroke="url(#glow-grad)" stroke-width="1.8" opacity="0.7" transform="rotate(-15 80 80)"/>
     <!-- Small satellite on orbit -->
-    <circle cx="142" cy="88" r="5" fill="#38bdf8" filter="url(#glow)" opacity="0.9"/>
+    <circle cx="142" cy="68" r="5" fill="#38bdf8" filter="url(#glow)" opacity="0.95"/>
     <!-- Stars -->
-    <circle cx="30" cy="40" r="1.5" fill="white" opacity="0.8"/>
-    <circle cx="130" cy="30" r="1" fill="white" opacity="0.6"/>
-    <circle cx="45" cy="58" r="1" fill="white" opacity="0.5"/>
-    <circle cx="118" cy="55" r="1.5" fill="white" opacity="0.7"/>
-    <circle cx="25" cy="70" r="1" fill="white" opacity="0.4"/>
+    <circle cx="30" cy="30" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="130" cy="22" r="1.2" fill="white" opacity="0.7"/>
+    <circle cx="45" cy="48" r="1.2" fill="white" opacity="0.6"/>
+    <circle cx="118" cy="45" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="25" cy="60" r="1" fill="white" opacity="0.5"/>
   </g>
 
   <!-- Wordmark group -->
-  <g font-family="Arial Black, Impact, Arial, Helvetica, sans-serif" font-weight="900" letter-spacing="4">
-    <text x="185" y="118" font-size="68" fill="#f8fafc">OUTPOST</text>
-    <text x="667" y="118" font-size="68" fill="#38bdf8">-X</text>
+  <g font-family="Arial Black, Impact, 'Montserrat', sans-serif" font-weight="900" letter-spacing="3">
+    <text x="185" y="112" font-size="64">
+      <tspan fill="#f8fafc">OUTPOST</tspan>
+      <tspan fill="#38bdf8">-X</tspan>
+    </text>
   </g>
   <!-- Accent underline -->
-  <line x1="185" y1="130" x2="755" y2="130" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
+  <line x1="185" y1="126" x2="570" y2="126" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
   <!-- Tagline -->
-  <text x="185" y="162" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#7dd3fc" letter-spacing="3" font-weight="600">TAKE COMMAND · BUILD BEYOND EARTH</text>
+  <text x="185" y="154" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14.5" fill="#7dd3fc" letter-spacing="3" font-weight="700">TAKE COMMAND · BUILD BEYOND EARTH</text>
 </svg>

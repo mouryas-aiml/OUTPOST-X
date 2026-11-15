@@ -2,13 +2,32 @@
 
 **Take Command. Build Beyond Earth. Shape Humanity’s Next Frontier.**
 
-*A NASA-inspired planetary mission simulator and command console.*
+*A NASA-inspired planetary mission simulator and mission-control platform.*
 
 **Static About Page:** [`about.html`](apps/web/public/about.html)
 
 OUTPOST-X is a browser-based, offline-ready planetary habitat and mission simulator that transforms deep-space survival constraints into gameplay. Operating lunar and Martian outposts across 5 training missions and 3 historical crisis replays, commanders make real decisions across five station consoles—balancing life support, power load shedding, radiation sheltering, food production, and communication light delays. Every number the simulation computes traces directly to authenticated NASA technical standards (BVAD, OCHMO, APR 8070.1) or real space weather and orbital telemetry (DONKI, OSDR, Horizons, Trek). Through the **Reality Dial**, the same deterministic physics engine is presented at three cognitive depths—Cadet (visual gauges, qualitative status words), Specialist (SI engineering units), and Commander (mathematical rates and equations)—ensuring that no choice is free and every decision teaches something true.
 
 Built by **Team XYZ**.
+
+---
+
+## Mission Control Showcase
+
+| Main Command Deck | Planetary Habitat Operations |
+|:---:|:---:|
+| ![OUTPOST-X Mission Command Deck](docs/screenshots/07-mission-command.png) | ![OUTPOST-X Landing Hero](docs/screenshots/01-landing-hero.png) |
+| *Photorealistic Mars Cockpit with Live NASA Telemetry* | *Mission Control Hero & Launch Windows* |
+
+| Power Architecture & Grid Management | Life Support & Atmospheric Systems |
+|:---:|:---:|
+| ![Power Distribution Console](docs/screenshots/03-power-console.png) | ![Life Support Console](docs/screenshots/04-lifesupport-console.png) |
+| *Dynamic Load Shedding & Battery Storage* | *Closed-Loop CO₂ Scrubbers & Resource Margins* |
+
+| Historical Crisis Replays (Apollo 13, SPE 1972) | Team Credits & Open Data Attribution |
+|:---:|:---:|
+| ![Historical Crisis Replay](docs/screenshots/09-crisis-view.png) | ![Team XYZ Footer](docs/screenshots/01-landing-footer.png) |
+| *Authentic NASA Mishap Investigation Telemetry* | *Configurable Team Roster & NASA Data Citations* |
 
 ---
 

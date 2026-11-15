@@ -55,8 +55,14 @@ const Nav = ({
 }) => {
   return (
     <nav className="modern-hero-nav" aria-label="Main Navigation">
-      <div className="modern-hero-brand">
-        <img src="/branding/outpost-x-logo.svg" alt="OUTPOST-X" className="modern-hero-logo" />
+      <div className="modern-hero-brand" aria-label="OUTPOST-X Mission Control">
+        <img
+          src="/branding/outpost-x-logo.svg"
+          alt="OUTPOST-X"
+          className="modern-hero-logo"
+          width="160"
+          height="40"
+        />
       </div>
       <div className="modern-hero-nav-actions">
         {onOpenCredits && (

@@ -11,8 +11,14 @@
  */
 export function BrandMark() {
   return (
-    <div className="app-brand">
-      <img src="/branding/outpost-x-logo.svg" alt="OUTPOST-X" className="app-brand-logo" />
+    <div className="app-brand" aria-label="OUTPOST-X">
+      <img
+        src="/branding/outpost-x-logo.svg"
+        alt="OUTPOST-X"
+        className="app-brand-logo"
+        width="160"
+        height="40"
+      />
     </div>
   );
 }

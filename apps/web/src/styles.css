@@ -10,33 +10,51 @@
  */
 
 :root {
-  --bg: #0b1020;
-  --bg-panel: #141b31;
-  --bg-raised: #1d2642;
-  --line: #2b3557;
-  --text: #e8ecf8;
-  --text-dim: #9aa6c7;
+  --bg: #060d1a;
+  --bg-deep: #050816;
+  --bg-panel: #0c1a2b;
+  --bg-raised: #11243d;
+  --line: #1c3654;
+  --line-highlight: #38bdf8;
+  --text: #e8f4ff;
+  --text-dim: #94a8c0;
 
   --nominal: #4ade80;
   --caution: #fbbf24;
   --critical: #f87171;
 
-  /* M9.5: the outer app shell's own NASA blue-white — deliberately separate from --bg and
-     never applied inside a .panel (see the four "dark surface" resets below), so every
-     panel/gauge/console control keeps the neutral dark mission-control palette above
-     unchanged. One fixed look for every visitor (no OS-based override, unlike before). */
-  --shell-bg: #eef3fb;
-  --shell-accent: #0b3d91;
-  --shell-text: #131a2e;
-  --shell-text-dim: #4a5578;
+  --accent: #38bdf8;
+  --accent-glow: rgba(56, 189, 248, 0.25);
+  --cyan: #38bdf8;
+  --electric-blue: #0284c7;
+  --orange: #f97316;
+  --violet: #818cf8;
 
-  --radius: 10px;
-  --gap: 12px;
+  --shell-bg: #060d1a;
+  --shell-accent: #38bdf8;
+  --shell-text: #e8f4ff;
+  --shell-text-dim: #94a8c0;
+
+  --radius: 12px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --gap: 16px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  --transition-fast: 150ms ease;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
 
   --text-outline:
-    -1px -1px 0 rgba(255, 255, 255, 0.85), 1px -1px 0 rgba(255, 255, 255, 0.85),
-    -1px 1px 0 rgba(255, 255, 255, 0.85), 1px 1px 0 rgba(255, 255, 255, 0.85);
-  --text-outline-sm: 0 0 2px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 255, 255, 0.7);
+    -1px -1px 0 rgba(0, 0, 0, 0.85), 1px -1px 0 rgba(0, 0, 0, 0.85),
+    -1px 1px 0 rgba(0, 0, 0, 0.85), 1px 1px 0 rgba(0, 0, 0, 0.85);
+  --text-outline-sm: 0 0 2px rgba(0, 0, 0, 0.95), 0 0 4px rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -522,6 +540,7 @@ code {
   .dashboard-grid[data-masonry="on"] {
     display: block;
   }
+}
 
   /* OUTPOST-X mission-control theme
    *
@@ -601,9 +620,10 @@ code {
 
   .app-brand-logo {
     display: block;
-    width: 100%;
-    height: auto;
-    max-height: 54px;
+    height: 34px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
   }
 
   .tab-button {
@@ -757,7 +777,6 @@ code {
   .dashboard-grid > * {
     margin-bottom: var(--gap);
   }
-}
 
 /* Player request: every station console was one long stacked column of panels/tables, however
    wide the screen — arrange them two-wide instead so a wide screen actually gets used, not
@@ -1458,8 +1477,9 @@ code {
 }
 
 .app-brand-logo {
-  height: 20px;
+  height: 32px;
   width: auto;
+  max-width: 160px;
   object-fit: contain;
 }
 
@@ -1525,10 +1545,11 @@ html.cockpit-active .app {
     max-height: calc(100vh - 40px);
     overflow-y: auto;
     z-index: 50;
-    background: rgba(238, 243, 251, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    background: rgba(8, 18, 36, 0.9);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
   }
 
   /* SIDEBAR_FOOTPRINT_PX = 230, see the shared comment above. */
@@ -1578,19 +1599,21 @@ html.cockpit-active .app {
 
 .tab-button:hover {
   color: var(--shell-text);
-  transform: scale(1.12);
+  background: rgba(56, 189, 248, 0.08);
+  transform: translateX(3px);
   transform-origin: left center;
 }
 
 .tab-button:focus-visible {
-  outline: 3px solid var(--nominal);
+  outline: 2px solid var(--accent);
   outline-offset: -2px;
 }
 
 .tab-button-active {
-  color: var(--shell-text);
+  color: #ffffff;
   border-left-color: var(--shell-accent);
-  background: rgba(11, 61, 145, 0.09);
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.22), rgba(56, 189, 248, 0.04));
+  box-shadow: inset 0 0 16px rgba(56, 189, 248, 0.08);
 }
 
 .tab-badge {
